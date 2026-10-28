@@ -1,0 +1,3835 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story ❤️</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Hind+Siliguri:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- JSZip for in-browser ZIP unpacking -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .hidden { display: none !important; }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      background-color: #05020a;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, 'Hind Siliguri', serif !important;
+    }
+
+    .font-sans {
+      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif !important;
+    }
+
+    .font-script {
+      font-family: 'Great Vibes', cursive !important;
+    }
+
+    .font-bengali {
+      font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif !important;
+    }
+
+    .nebula-bg {
+      background:
+        radial-gradient(circle at 20% 25%, rgba(225, 29, 72, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 80% 70%, rgba(192, 38, 211, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(251, 191, 36, 0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #040109 0%, #0b0316 50%, #05010a 100%);
+    }
+
+    .glass-card {
+      background: rgba(18, 8, 31, 0.74);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 215, 230, 0.18);
+      box-shadow:
+        0 25px 60px -15px rgba(0, 0, 0, 0.85),
+        0 0 35px rgba(244, 63, 94, 0.14),
+        inset 0 1px 1px rgba(255, 255, 255, 0.14);
+    }
+
+    .glass-pill {
+      background: rgba(25, 11, 42, 0.84);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(251, 113, 133, 0.32);
+    }
+
+    .text-glow-rose {
+      text-shadow: 0 0 20px rgba(251, 113, 133, 0.55), 0 0 40px rgba(225, 29, 72, 0.35);
+    }
+
+    .text-glow-gold {
+      text-shadow: 0 0 25px rgba(251, 191, 36, 0.7), 0 0 55px rgba(245, 158, 11, 0.45);
+    }
+
+    @keyframes softBeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.15); }
+      30% { transform: scale(0.98); }
+      45% { transform: scale(1.09); }
+    }
+
+    .animate-heart-soft {
+      display: inline-block;
+      animation: softBeat 2.2s infinite ease-in-out;
+    }
+
+    @keyframes dramaticBeat {
+      0% { transform: scale(1); }
+      18% { transform: scale(1.36); }
+      34% { transform: scale(0.95); }
+      50% { transform: scale(1.22); }
+      100% { transform: scale(1); }
+    }
+
+    .animate-heart-dramatic {
+      display: inline-block;
+      animation: dramaticBeat 0.95s ease-in-out;
+    }
+
+    @keyframes screenHeartbeatPulse {
+      0% { opacity: 0; }
+      22% { opacity: 0.5; }
+      45% { opacity: 0.15; }
+      65% { opacity: 0.32; }
+      100% { opacity: 0; }
+    }
+
+    .screen-pulse-active {
+      animation: screenHeartbeatPulse 0.9s ease-out forwards;
+    }
+
+    @keyframes gentleShake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-9px); }
+      40% { transform: translateX(9px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    .shake-error {
+      animation: gentleShake 0.42s ease-in-out both;
+    }
+
+    @keyframes numberDramaticPop {
+      0% { opacity: 0; transform: scale(0.45) translateY(16px); }
+      25% { opacity: 1; transform: scale(1.15) translateY(0); }
+      45% { transform: scale(0.98); }
+      65% { transform: scale(1.05); }
+      88% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.3); }
+    }
+
+    .final-ten-number {
+      animation: numberDramaticPop 0.94s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .cinematic-text-reveal {
+      transition: opacity 0.85s ease, transform 0.85s ease;
+    }
+
+    .cinematic-text-hidden {
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+    }
+
+    .cinematic-text-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    @keyframes breatheAura {
+      0%, 100% { transform: scale(1); opacity: 0.45; }
+      50% { transform: scale(1.1); opacity: 0.85; }
+    }
+
+    .animate-aura-breathe {
+      animation: breatheAura 4s ease-in-out infinite;
+    }
+
+    .flip-card { perspective: 1000px; }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+    }
+    .flip-card-back { transform: rotateY(180deg); }
+
+    @keyframes kenBurnsSlow {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+      100% { transform: scale(1); }
+    }
+
+    .animate-ken-burns {
+      animation: kenBurnsSlow 14s ease-in-out infinite;
+    }
+
+    /* Romantic Photo Puzzle Styles */
+    .puzzle-grid-container {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 1.25rem;
+      padding: 0.45rem;
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.42), rgba(251, 191, 36, 0.32), rgba(192, 38, 211, 0.35));
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(244, 63, 94, 0.2);
+    }
+
+    .puzzle-tile {
+      position: relative;
+      border-radius: 0.65rem;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      background-color: #160722;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    .puzzle-tile:hover {
+      transform: scale(1.02);
+      border-color: rgba(251, 191, 36, 0.85);
+      z-index: 10;
+    }
+
+    .puzzle-tile.tile-selected {
+      transform: scale(0.93);
+      border: 2.5px solid #fbbf24;
+      box-shadow: 0 0 20px rgba(251, 191, 36, 0.95);
+      z-index: 20;
+    }
+
+    .puzzle-tile.tile-correct {
+      border-color: rgba(251, 191, 36, 0.55);
+    }
+
+    @keyframes eqBar1 { 0%, 100% { height: 4px; } 50% { height: 14px; } }
+    @keyframes eqBar2 { 0%, 100% { height: 13px; } 50% { height: 5px; } }
+    @keyframes eqBar3 { 0%, 100% { height: 6px; } 50% { height: 15px; } }
+    .eq-bar-1 { animation: eqBar1 0.8s ease-in-out infinite; }
+    .eq-bar-2 { animation: eqBar2 0.65s ease-in-out infinite; }
+    .eq-bar-3 { animation: eqBar3 0.9s ease-in-out infinite; }
+  </style>
+</head>
+<body class="nebula-bg relative selection:bg-rose-500 selection:text-white">
+
+  <!-- BACKGROUND CANVAS (Starry Sky, Floating Hearts, Soft Particles) -->
+  <canvas id="cosmos-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+  <!-- Screen Pulse Overlay (Final 10s & Heartbeats) -->
+  <div id="screen-pulse-overlay" class="fixed inset-0 pointer-events-none z-10 opacity-0"
+       style="background: radial-gradient(circle at center, rgba(244, 63, 94, 0.26) 0%, rgba(225, 29, 72, 0.45) 60%, rgba(251, 191, 36, 0.22) 100%);">
+  </div>
+
+  <!-- Celestial Starlight Bloom Overlay (Stage 3 Transition) -->
+  <div id="golden-light-flood" class="fixed inset-0 pointer-events-none z-30 opacity-0 transition-opacity duration-[1800ms]"
+       style="background: radial-gradient(circle at center, #fff1f2 0%, #ffe4e6 30%, #fecdd3 58%, #1f081e 100%);">
+  </div>
+
+  <!-- SEPARATE AUDIO ELEMENTS:
+       1) #bg-music-file-audio: Optional custom MP3/audio file for background music (or uses built-in Romantic Synth)
+       2) #confession-voice-audio: Dedicated exclusively to "WhatsApp Audio 2026-10-28 at 11.14.27 PM.ogg" -->
+  <audio id="bg-music-file-audio" loop preload="none" class="hidden"></audio>
+  <audio id="confession-voice-audio" preload="none" class="hidden"></audio>
+
+  <!-- Hidden File Inputs for Custom Uploads in Preview -->
+  <input id="bg-music-file-input" type="file" accept="audio/*,.mp3,.ogg,.wav,.m4a" class="hidden" onchange="handleCustomBgMusicUpload(event)" />
+  <input id="confession-audio-file-input" type="file" accept="audio/*,video/*,.ogg,.mp3,.wav,.m4a" class="hidden" onchange="handleConfessionAudioUpload(event)" />
+  <input id="zip-media-input" type="file" multiple accept=".zip,image/*,video/*,audio/*,.ogg" class="hidden" onchange="handleUserMediaUpload(event)" />
+
+  <!-- ====================================================
+       FLOATING BACKGROUND MUSIC & SOUND CONTROLS (TOP RIGHT)
+       ==================================================== -->
+  <div class="fixed top-3.5 right-3.5 z-50 flex flex-col items-end gap-2">
+    <div class="flex items-center gap-2">
+      <button id="music-toggle-btn" type="button" onclick="toggleBackgroundMusic()"
+        class="glass-pill px-4 py-2.5 rounded-full flex items-center gap-2.5 text-xs sm:text-sm text-rose-100 hover:text-white hover:border-rose-400/60 transition-all shadow-lg group cursor-pointer">
+        <span class="w-6 h-6 rounded-full bg-rose-500/25 flex items-center justify-center text-rose-300 group-hover:scale-110 transition-transform">
+          <i id="music-icon" class="fa-solid fa-music"></i>
+        </span>
+        <span id="music-label" class="font-medium tracking-wide">Play Music 🎹</span>
+        <span id="music-bars" class="hidden items-end gap-0.5 h-3.5 ml-1">
+          <span class="w-0.5 bg-rose-400 eq-bar-1 rounded-full"></span>
+          <span class="w-0.5 bg-amber-300 eq-bar-2 rounded-full"></span>
+          <span class="w-0.5 bg-rose-300 eq-bar-3 rounded-full"></span>
+        </span>
+      </button>
+
+      <button type="button" onclick="toggleMusicMixerPanel()"
+        class="glass-pill w-10 h-10 rounded-full flex items-center justify-center text-amber-200 hover:text-white hover:border-amber-300/60 transition-all shadow-lg cursor-pointer"
+        title="Background Music Settings">
+        <i class="fa-solid fa-sliders text-xs"></i>
+      </button>
+    </div>
+
+    <!-- Expandable Background Music Studio Panel -->
+    <div id="music-mixer-panel" class="hidden glass-card rounded-2xl p-4 w-72 sm:w-80 border border-rose-300/30 text-left shadow-2xl">
+      <div class="flex items-center justify-between border-b border-white/10 pb-2.5 mb-3">
+        <div class="flex items-center gap-2">
+          <span class="text-base">🎹</span>
+          <div>
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-white">Background Music Studio</h4>
+            <p class="text-[10px] text-rose-200/70">Auto-pauses when Confession plays</p>
+          </div>
+        </div>
+        <button type="button" onclick="toggleMusicMixerPanel()" class="text-rose-200/60 hover:text-white text-xs cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="mb-3">
+        <label class="block text-[10px] uppercase tracking-wider text-amber-200/90 mb-1.5">Built-In Instrumental Vibe</label>
+        <div class="grid grid-cols-3 gap-1.5 text-[11px]">
+          <button type="button" id="vibe-btn-lofi" onclick="setInstrumentalStyle('lofi')"
+            class="py-1.5 px-2 rounded-lg bg-rose-500/30 border border-rose-300/50 text-white font-medium transition-all cursor-pointer">
+            🌙 Cool Lo-Fi
+          </button>
+          <button type="button" id="vibe-btn-dreamy" onclick="setInstrumentalStyle('dreamy')"
+            class="py-1.5 px-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-rose-100 transition-all cursor-pointer">
+            🎹 Piano
+          </button>
+          <button type="button" id="vibe-btn-strings" onclick="setInstrumentalStyle('strings')"
+            class="py-1.5 px-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-rose-100 transition-all cursor-pointer">
+            🎻 Harp
+          </button>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="flex justify-between text-[11px] text-rose-100/80 mb-1">
+          <span>🎹 Background Music Volume</span>
+          <span id="inst-vol-label">80%</span>
+        </div>
+        <input type="range" min="0" max="100" value="80" oninput="updateInstrumentalVolume(this.value)"
+          class="w-full accent-rose-500 h-1.5 bg-white/15 rounded-lg cursor-pointer" />
+      </div>
+
+      <div class="space-y-1.5">
+        <button type="button" onclick="document.getElementById('bg-music-file-input').click()"
+          class="w-full py-2 px-3 rounded-xl bg-white/10 hover:bg-rose-500/30 border border-white/15 text-xs text-rose-100 font-medium flex items-center justify-center gap-2 transition-all cursor-pointer">
+          <i class="fa-solid fa-music text-rose-300"></i>
+          <span id="bg-music-file-status">Optional: Use Custom Song (music.mp3)</span>
+        </button>
+
+        <button type="button" onclick="document.getElementById('confession-audio-file-input').click()"
+          class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-rose-600/40 to-amber-500/40 hover:from-rose-600/60 hover:to-amber-500/60 border border-amber-300/40 text-xs text-white font-medium flex items-center justify-center gap-2 transition-all cursor-pointer">
+          <i class="fa-solid fa-microphone-lines text-amber-200"></i>
+          <span id="voice-file-status">Load Confession File (.ogg)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subtle Creator Config Button (Bottom Left) -->
+  <div class="fixed bottom-3 left-3 z-50">
+    <button type="button" onclick="toggleCreatorModal()"
+      class="w-8 h-8 rounded-full bg-white/5 hover:bg-rose-500/30 border border-white/10 hover:border-rose-300/50 text-rose-200/35 hover:text-white flex items-center justify-center transition-all text-[10px] shadow-lg cursor-pointer"
+      title="Creator Settings">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+    </button>
+  </div>
+
+  <!-- ====================================================
+       STAGE 1: PASSWORD GATE
+       ==================================================== -->
+  <main id="stage-1-gate" class="relative z-20 min-h-screen w-full flex flex-col items-center justify-center px-4 py-10">
+    
+    <!-- Password Card -->
+    <div id="password-card" class="glass-card max-w-md w-full rounded-3xl p-8 sm:p-10 text-center relative overflow-hidden transition-all duration-500">
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-56 h-56 bg-rose-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-rose-500/25 to-amber-500/15 border border-rose-300/30 mb-6 shadow-inner">
+        <span class="text-2xl animate-heart-soft">❤️</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-5xl font-semibold tracking-wide text-white text-glow-rose mb-3">
+        Our Story ❤️
+      </h1>
+
+      <p class="text-rose-100/80 font-serif italic text-lg sm:text-xl leading-relaxed mb-8">
+        "This little universe was made for only one person."
+      </p>
+
+      <div class="w-24 h-px bg-gradient-to-r from-transparent via-rose-400/50 to-transparent mx-auto mb-8"></div>
+
+      <form id="password-form" onsubmit="handlePasswordSubmit(event)" class="space-y-5">
+        <label for="nickname-input" class="block text-sm sm:text-base font-medium text-amber-100/90 tracking-wide">
+          What nickname do I call you?
+        </label>
+
+        <div class="relative">
+          <input
+            id="nickname-input"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Enter your secret nickname..."
+            class="w-full px-5 py-4 rounded-2xl bg-black/45 border border-rose-300/30 text-center text-white placeholder-rose-200/35 text-base sm:text-lg focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-500/30 transition-all"
+            style="user-select: text;"
+          />
+        </div>
+
+        <div id="password-error-box" class="min-h-[28px] flex items-center justify-center">
+          <p id="password-error-text" class="text-sm text-rose-300 font-medium opacity-0 transition-opacity duration-300"></p>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rose-600 via-pink-600 to-amber-500 hover:from-rose-500 hover:via-pink-500 hover:to-amber-400 text-white font-medium tracking-wider text-sm sm:text-base uppercase shadow-lg shadow-rose-600/30 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <span>Enter Our Universe</span>
+          <i class="fa-solid fa-heart text-xs"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- CORRECT PASSWORD WELCOME SEQUENCE OVERLAY -->
+    <div id="welcome-sequence-box" class="hidden flex-col items-center justify-center text-center max-w-xl px-6">
+      <div class="mb-8 relative flex items-center justify-center">
+        <div class="w-28 h-28 rounded-full bg-rose-500/25 blur-2xl absolute animate-pulse"></div>
+        <div class="text-6xl sm:text-7xl animate-heart-soft relative z-10 select-none">❤️</div>
+      </div>
+      <p id="welcome-seq-text" class="font-serif text-3xl sm:text-5xl text-white text-glow-rose leading-snug transition-all duration-500 opacity-0 translate-y-2">
+      </p>
+    </div>
+  </main>
+
+  <!-- ====================================================
+       STAGE 1.5: ROMANTIC PHOTO PUZZLE GATE
+       ==================================================== -->
+  <section id="stage-puzzle-gate" class="hidden relative z-20 min-h-screen w-full flex-col items-center justify-center px-4 py-8">
+    <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden border border-rose-300/30">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-pill text-[11px] uppercase tracking-[0.2em] text-amber-200 mb-2.5">
+        <i class="fa-solid fa-puzzle-piece text-rose-400"></i>
+        <span>Memory Lock • Unlock Stage 2</span>
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-white text-glow-rose">
+        Piece Together Our Memory ❤️
+      </h2>
+      <p id="puzzle-subtitle-text" class="text-xs sm:text-sm text-rose-100/80 mt-1 mb-4">
+        Tap any two tiles to swap them and complete our photo to unlock the Countdown Universe.
+      </p>
+
+      <!-- Puzzle Progress & Controls Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3 px-1 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-1 rounded-full bg-black/40 border border-white/10 text-rose-200">
+            Matched: <strong id="puzzle-matched-count" class="text-amber-300">5/9</strong>
+          </span>
+          <span class="px-2.5 py-1 rounded-full bg-black/40 border border-white/10 text-rose-200">
+            Moves: <strong id="puzzle-moves-count" class="text-white">0</strong>
+          </span>
+        </div>
+
+        <div class="flex items-center gap-1.5">
+          <button type="button" onclick="cyclePuzzlePhotoChoice()"
+            class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-rose-500/30 border border-white/15 text-rose-100 transition-all cursor-pointer">
+            <i class="fa-solid fa-camera-rotate mr-1 text-amber-200"></i>Photo
+          </button>
+          <button type="button" onclick="pulsePuzzlePeek()"
+            class="px-2.5 py-1 rounded-full bg-white/10 hover:bg-amber-500/30 border border-white/15 text-amber-200 transition-all cursor-pointer">
+            <i class="fa-solid fa-eye mr-1"></i>Peek
+          </button>
+          <button type="button" onclick="givePuzzleMagicHint()"
+            class="px-2.5 py-1 rounded-full bg-amber-500/20 hover:bg-amber-500/35 border border-amber-300/40 text-amber-100 transition-all cursor-pointer">
+            <i class="fa-solid fa-wand-magic-sparkles mr-1"></i>Hint
+          </button>
+        </div>
+      </div>
+
+      <!-- 3x3 Interactive Puzzle Board -->
+      <div id="puzzle-board-wrapper" class="puzzle-grid-container">
+        <div id="puzzle-grid" class="w-full h-full grid grid-cols-3 grid-rows-3 gap-1.5 relative z-10"></div>
+
+        <!-- Original Photo Peek / Solved Overlay -->
+        <div id="puzzle-full-reveal" class="hidden absolute inset-1.5 z-30 rounded-xl overflow-hidden bg-black/95 flex-col items-center justify-end">
+          <img id="puzzle-reveal-img" src="" alt="Our Memory" class="w-full h-full object-cover" />
+          <div id="puzzle-solved-caption-overlay" class="hidden absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/75 to-transparent p-4 text-center">
+            <span class="text-xs uppercase tracking-[0.2em] text-amber-300 block mb-0.5">Memory Complete ✨</span>
+            <p class="font-serif italic text-lg sm:text-xl text-white text-glow-rose">
+              "Every piece of my life fell into place the day I met you."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <p id="puzzle-photo-caption" class="font-serif italic text-base sm:text-lg text-amber-100/90 min-h-[26px]">
+          "The moment I looked at you and quietly knew my heart had found its home."
+        </p>
+
+        <div id="puzzle-unlock-cta" class="hidden mt-4">
+          <button type="button" onclick="proceedFromPuzzleToStage2()"
+            class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-rose-600 via-pink-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white font-medium tracking-wider text-sm uppercase shadow-xl shadow-rose-500/35 hover:scale-[1.01] transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <span>Enter The Countdown Universe ✨</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       STAGE 2: THE COUNTDOWN UNIVERSE
+       ==================================================== -->
+  <section id="stage-2-countdown" class="hidden relative z-20 min-h-screen w-full flex-col items-center justify-between px-4 py-8 sm:py-12">
+    
+    <!-- Top Origin Memory Card -->
+    <div class="w-full max-w-4xl flex flex-col items-center text-center mt-2 sm:mt-4">
+      <div class="glass-pill px-5 py-2 rounded-full inline-flex items-center gap-2 text-xs sm:text-sm text-amber-200/90 mb-5 shadow-md">
+        <span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+        <span>Asia/Dhaka • Bangladesh Time</span>
+      </div>
+
+      <div class="glass-card rounded-3xl px-6 py-5 sm:px-10 sm:py-6 max-w-xl w-full border border-rose-300/20">
+        <p class="text-xs sm:text-sm uppercase tracking-[0.25em] text-rose-200/70 mb-1.5">
+          Our story began on
+        </p>
+        <h2 class="font-serif text-2xl sm:text-4xl font-semibold text-white text-glow-rose">
+          June 29, 2026
+        </h2>
+        <p class="font-serif italic text-lg sm:text-xl text-amber-200/95 mt-0.5">
+          2:28 AM • Bangladesh Time ❤️
+        </p>
+        <div class="w-16 h-px bg-gradient-to-r from-transparent via-rose-400/50 to-transparent mx-auto my-3.5"></div>
+        <p class="text-xs sm:text-base text-rose-100/85 font-light">
+          And another beautiful chapter will begin when this timer ends.
+        </p>
+      </div>
+    </div>
+
+    <!-- Center Live Countdown Display -->
+    <div class="w-full max-w-4xl my-auto py-6 flex flex-col items-center justify-center text-center">
+      <div class="min-h-[44px] mb-4 flex items-center justify-center">
+        <p id="final-phase-text" class="font-serif italic text-2xl sm:text-4xl text-amber-200 text-glow-gold opacity-0 transition-all duration-500"></p>
+      </div>
+
+      <!-- Standard 5-Unit Grid -->
+      <div id="standard-timer-grid" class="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-5 w-full max-w-3xl">
+        <div class="glass-card rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
+          <span id="cd-months" class="font-serif text-4xl sm:text-6xl font-bold text-white text-glow-rose tabular-nums">00</span>
+          <span class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-rose-200/75 mt-2">Months</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
+          <span id="cd-days" class="font-serif text-4xl sm:text-6xl font-bold text-white text-glow-rose tabular-nums">00</span>
+          <span class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-rose-200/75 mt-2">Days</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
+          <span id="cd-hours" class="font-serif text-4xl sm:text-6xl font-bold text-white text-glow-rose tabular-nums">00</span>
+          <span class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-rose-200/75 mt-2">Hours</span>
+        </div>
+
+        <div class="glass-card rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center">
+          <span id="cd-minutes" class="font-serif text-4xl sm:text-6xl font-bold text-white text-glow-rose tabular-nums">00</span>
+          <span class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-rose-200/75 mt-2">Minutes</span>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1 glass-card rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center relative overflow-hidden border-rose-400/35">
+          <span id="cd-seconds" class="font-serif text-4xl sm:text-6xl font-bold text-amber-200 text-glow-gold tabular-nums relative z-10">00</span>
+          <span class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-amber-200/90 mt-2 relative z-10">Seconds</span>
+        </div>
+      </div>
+
+      <!-- FINAL 10 SECONDS DRAMATIC GIANT NUMBER -->
+      <div id="final-10-stage" class="hidden flex-col items-center justify-center my-4">
+        <div id="final-10-number-box" class="font-serif text-8xl sm:text-[11rem] font-bold text-white text-glow-rose leading-none select-none">
+          10
+        </div>
+        <div class="mt-4 text-3xl animate-heart-dramatic">❤️</div>
+      </div>
+
+      <!-- Rotating Romantic Messages Below Timer -->
+      <div class="mt-8 sm:mt-10 min-h-[56px] flex flex-col items-center justify-center px-4">
+        <p id="rotating-quote" class="font-serif italic text-xl sm:text-2xl text-rose-100/95 tracking-wide transition-all duration-500">
+          "Every second became a memory."
+        </p>
+        <p class="text-[11px] uppercase tracking-[0.22em] text-rose-300/50 mt-2">
+          Target: October 29, 2026 • 2:27:50 AM (Asia/Dhaka)
+        </p>
+      </div>
+    </div>
+
+    <div class="h-4"></div>
+  </section>
+
+  <!-- ====================================================
+       STAGE 3: UNLOCK EXPERIENCE (Cinematic Sequence)
+       ==================================================== -->
+  <section id="stage-3-cinematic" class="hidden fixed inset-0 z-40 bg-[#030106] flex-col items-center justify-center overflow-hidden">
+    <canvas id="cinematic-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-10"></canvas>
+
+    <!-- Phase A: Single Glowing Heart & 4 Months Monologue -->
+    <div id="cinematic-heart-container" class="relative z-20 flex flex-col items-center justify-center text-center px-6 max-w-3xl">
+      <div id="cinematic-single-heart" class="opacity-0 transition-all duration-700 mb-10 relative flex items-center justify-center">
+        <div class="w-36 h-36 rounded-full bg-rose-500/25 blur-2xl absolute animate-pulse"></div>
+        <div id="cinematic-heart-glyph" class="text-6xl sm:text-7xl select-none relative z-10">❤️</div>
+      </div>
+
+      <p id="cinematic-monologue" class="font-serif italic text-3xl sm:text-5xl text-rose-50 text-glow-rose leading-relaxed cinematic-text-reveal cinematic-text-hidden">
+      </p>
+    </div>
+
+    <!-- Phase B: Two Souls Embrace & Celestial Horizon Reveal -->
+    <div id="celestial-embrace-wrapper" class="hidden relative z-20 flex-col items-center justify-center w-full h-full px-6 text-center">
+      <div id="celestial-core-halo" class="relative flex items-center justify-center mb-10 opacity-0 scale-75 transition-all duration-1000">
+        <div class="w-52 h-52 sm:w-64 sm:h-64 rounded-full bg-gradient-to-tr from-rose-500/25 via-pink-300/20 to-amber-200/25 blur-2xl absolute animate-aura-breathe"></div>
+        <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full border border-rose-200/30 flex items-center justify-center relative">
+          <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-amber-200/35 flex items-center justify-center">
+            <span class="text-3xl sm:text-4xl animate-heart-soft">❤️</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-2xl min-h-[120px] flex flex-col items-center justify-center">
+        <p id="door-welcome-sub" class="text-xs sm:text-sm uppercase tracking-[0.35em] text-rose-200/75 mb-3 cinematic-text-reveal cinematic-text-hidden">
+          June 29, 2026 • 2:28 AM → Forever
+        </p>
+        <p id="door-welcome-text" class="font-serif italic text-3xl sm:text-5xl font-medium text-white text-glow-rose leading-snug cinematic-text-reveal cinematic-text-hidden">
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       MAIN ANNIVERSARY WEBSITE (Unlocked Sanctuary)
+       ==================================================== -->
+  <div id="main-anniversary-site" class="hidden relative z-20 w-full min-h-screen pb-24">
+    
+    <!-- Sticky Anniversary Navigation -->
+    <header class="sticky top-0 z-40 backdrop-blur-xl bg-black/55 border-b border-rose-300/15">
+      <div class="max-w-6xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span class="text-xl animate-heart-soft">❤️</span>
+          <span class="font-serif text-xl sm:text-2xl font-semibold tracking-wide text-white">Our Universe</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-rose-100/80 pr-40">
+          <a href="#section-eternity" class="hover:text-white transition-colors">Our Time</a>
+          <a href="#section-confession" class="hover:text-amber-200 text-rose-200 transition-colors">Confession Tape 🎙️</a>
+          <a href="#section-timeline" class="hover:text-white transition-colors">Timeline</a>
+          <a href="#section-video-reel" class="hover:text-white transition-colors">Our Film 🎬</a>
+          <a href="#section-memories" class="hover:text-white transition-colors">Memories</a>
+          <a href="#section-letter" class="hover:text-white transition-colors">Love Letter</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="section-eternity" class="max-w-5xl mx-auto px-4 pt-14 sm:pt-20 pb-14 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-xs sm:text-sm text-amber-200 mb-6">
+        <i class="fa-solid fa-crown text-amber-300"></i>
+        <span>Unlocked Forever • 4 Months Since June 29, 2026 at 2:28 AM</span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-7xl font-bold text-white text-glow-rose leading-tight mb-4">
+        Happy 4 Months Anniversary, <span id="hero-partner-name" class="text-amber-200 font-script font-normal text-6xl sm:text-8xl block sm:inline mt-2 sm:mt-0">My Love</span> ❤️
+      </h1>
+
+      <p class="font-serif italic text-xl sm:text-2xl text-rose-100/85 max-w-2xl mx-auto leading-relaxed mb-12">
+        "From 2:28 AM on June 29, 2026 to this very heartbeat—every second of these 4 months with you has been my favorite place to exist."
+      </p>
+
+      <!-- Live Time Together Counter -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 max-w-4xl mx-auto border border-amber-300/25">
+        <p class="text-xs uppercase tracking-[0.25em] text-amber-200/80 mb-6">
+          Every Second We Have Shared Together Since June 29, 2026
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+          <div class="bg-black/40 rounded-2xl p-4 border border-white/10">
+            <div id="together-days" class="font-serif text-4xl sm:text-5xl font-bold text-white text-glow-rose tabular-nums">122</div>
+            <div class="text-xs uppercase tracking-widest text-rose-200/70 mt-1">Days</div>
+          </div>
+          <div class="bg-black/40 rounded-2xl p-4 border border-white/10">
+            <div id="together-hours" class="font-serif text-4xl sm:text-5xl font-bold text-white text-glow-rose tabular-nums">00</div>
+            <div class="text-xs uppercase tracking-widest text-rose-200/70 mt-1">Hours</div>
+          </div>
+          <div class="bg-black/40 rounded-2xl p-4 border border-white/10">
+            <div id="together-minutes" class="font-serif text-4xl sm:text-5xl font-bold text-white text-glow-rose tabular-nums">00</div>
+            <div class="text-xs uppercase tracking-widest text-rose-200/70 mt-1">Minutes</div>
+          </div>
+          <div class="bg-black/40 rounded-2xl p-4 border border-amber-300/30">
+            <div id="together-seconds" class="font-serif text-4xl sm:text-5xl font-bold text-amber-200 text-glow-gold tabular-nums">00</div>
+            <div class="text-xs uppercase tracking-widest text-amber-200/80 mt-1">Seconds</div>
+          </div>
+        </div>
+        <p class="text-xs sm:text-sm text-rose-100/75 mt-6 font-light">
+          4 magical months, thousands of smiles, endless late-night conversations, and one love story written in the stars.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         THE CONFESSION TAPE SANCTUARY (AUTO-PAUSES BACKGROUND MUSIC)
+         ==================================================== -->
+    <section id="section-confession" class="max-w-4xl mx-auto px-4 py-12">
+      <div class="glass-card rounded-3xl p-6 sm:p-10 border border-rose-400/35 relative overflow-hidden">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6 mb-6 relative z-10">
+          <div>
+            <span class="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.22em] text-amber-200 mb-1">
+              <i class="fa-solid fa-microphone-lines text-rose-400 animate-pulse"></i>
+              <span>The Night My Heartbeat Was Racing</span>
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-white text-glow-rose">
+              My Unfiltered Confession Tape 🎙️❤️
+            </h2>
+            <p class="text-xs sm:text-sm text-rose-100/75 mt-1">
+              When you press play below, the background music will automatically pause so you can hear my voice clearly—and will automatically resume when you pause or finish listening.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <button type="button" id="confession-play-btn" onclick="toggleConfessionExperience()"
+              class="px-5 py-3 rounded-2xl bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white text-xs sm:text-sm font-medium tracking-wider uppercase shadow-lg shadow-rose-600/30 flex items-center gap-2 transition-all cursor-pointer">
+              <i id="confession-play-icon" class="fa-solid fa-play"></i>
+              <span id="confession-play-label">Play My Confession 🎙️</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dedicated Confession Audio Scrubber & Status Bar -->
+        <div class="bg-black/55 rounded-2xl p-4 sm:p-5 border border-amber-300/25 mb-6 relative z-10">
+          <div class="flex flex-wrap items-center justify-between gap-2 text-xs mb-2.5">
+            <div class="flex items-center gap-2">
+              <span id="confession-status-dot" class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
+              <span id="confession-audio-status-badge" class="font-medium text-amber-200">
+                Ready: WhatsApp Audio 2026-10-28 at 11.14.27 PM.ogg
+              </span>
+            </div>
+            <span id="confession-time-display" class="text-rose-200/80 font-mono text-[11px]">0:00 / 3:45</span>
+          </div>
+
+          <input id="confession-seek-slider" type="range" min="0" max="100" value="0" step="0.1"
+            oninput="seekConfessionAudio(this.value)"
+            class="w-full accent-amber-400 h-1.5 bg-white/15 rounded-lg cursor-pointer" />
+        </div>
+
+        <div class="bg-black/45 rounded-2xl p-6 sm:p-8 border border-rose-300/20 text-center relative z-10">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <span class="text-lg animate-heart-soft">💓</span>
+            <span id="confession-stage-Chapter" class="text-xs uppercase tracking-[0.25em] text-rose-300/90">
+              Tap Play Above or Click Any Line Below
+            </span>
+          </div>
+
+          <p id="confession-active-bengali" class="font-bengali text-xl sm:text-3xl font-medium text-white text-glow-rose leading-relaxed min-h-[48px]">
+            "হাসবা না প্লিজ, তুমি হাসতেছো লিটারেলি এখন আমি জানি..."
+          </p>
+          <p id="confession-active-english" class="font-serif italic text-lg sm:text-xl text-amber-200/90 mt-2">
+            "Please don't laugh, I literally know you're smiling right now..."
+          </p>
+
+          <div id="confession-lines-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-7 text-left"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR STORY TIMELINE -->
+    <section id="section-timeline" class="max-w-4xl mx-auto px-4 py-16">
+      <div class="text-center mb-14">
+        <span class="text-xs uppercase tracking-[0.25em] text-rose-300">Chapters of Us</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-white text-glow-rose mt-2">
+          How Our Universe Formed ✨
+        </h2>
+      </div>
+
+      <div class="relative border-l-2 border-rose-400/30 ml-4 sm:ml-0 sm:mx-auto space-y-12 pl-6 sm:pl-0">
+        <div class="relative sm:grid sm:grid-cols-2 sm:gap-10 items-center">
+          <div class="sm:text-right sm:pr-10">
+            <span class="inline-block px-3 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-xs text-rose-200 mb-2">
+              June 29, 2026 • 2:28 AM
+            </span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-white">The Spark at 2:28 AM</h3>
+            <p class="text-sm sm:text-base text-rose-100/80 mt-2 leading-relaxed">
+              While the rest of the world was asleep in the quiet of the night, our story quietly began. With a racing heartbeat and an honest confession, my whole life changed forever.
+            </p>
+          </div>
+          <div class="hidden sm:flex items-center justify-center absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-rose-600 border-4 border-[#090314]">
+            <i class="fa-solid fa-star text-xs text-white"></i>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:pl-10">
+            <div class="glass-card rounded-2xl p-5 border border-rose-300/20">
+              <p class="font-serif italic text-lg text-amber-200">"Some beginnings don't announce themselves with fireworks—they arrive softly and become your whole world."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative sm:grid sm:grid-cols-2 sm:gap-10 items-center">
+          <div class="order-2 sm:pl-10">
+            <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-xs text-amber-200 mb-2">
+              Every Day Since
+            </span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-white">When Ordinary Turned Magical</h3>
+            <p class="text-sm sm:text-base text-rose-100/80 mt-2 leading-relaxed">
+              Your shining hair, your amazing mentality, the way you smile, and the secret nickname only you answer to—suddenly every single day had a warmth I never knew I was missing.
+            </p>
+          </div>
+          <div class="hidden sm:flex items-center justify-center absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-amber-500 border-4 border-[#090314]">
+            <i class="fa-solid fa-heart text-xs text-white"></i>
+          </div>
+          <div class="order-1 mt-4 sm:mt-0 sm:pr-10 sm:text-right">
+            <div class="glass-card rounded-2xl p-5 border border-amber-300/20">
+              <p class="font-serif italic text-lg text-rose-200">"You made ordinary moments unforgettable."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative sm:grid sm:grid-cols-2 sm:gap-10 items-center">
+          <div class="sm:text-right sm:pr-10">
+            <span class="inline-block px-3 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-xs text-rose-200 mb-2">
+              4 Months of Loving You
+            </span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-white">122 Unforgettable Days</h3>
+            <p class="text-sm sm:text-base text-rose-100/80 mt-2 leading-relaxed">
+              4 magical months of growing closer, learning every little detail about your heart, and falling deeper in love with the person who changed everything.
+            </p>
+          </div>
+          <div class="hidden sm:flex items-center justify-center absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-pink-500 border-4 border-[#090314]">
+            <i class="fa-solid fa-moon text-xs text-white"></i>
+          </div>
+          <div class="mt-4 sm:mt-0 sm:pl-10">
+            <div class="glass-card rounded-2xl p-5 border border-rose-300/20">
+              <p class="font-serif italic text-lg text-amber-200">"My favorite place is wherever you are."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative sm:grid sm:grid-cols-2 sm:gap-10 items-center">
+          <div class="order-2 sm:pl-10">
+            <span class="inline-block px-3 py-1 rounded-full bg-amber-500/25 border border-amber-300/50 text-xs text-amber-100 mb-2">
+              October 29, 2026 • 2:27:50 AM
+            </span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-amber-200 text-glow-gold">A Brand New Chapter Begins</h3>
+            <p class="text-sm sm:text-base text-rose-100/80 mt-2 leading-relaxed">
+              The countdown reached zero, our souls met in the starlight, and here we are—stepping into forever together.
+            </p>
+          </div>
+          <div class="hidden sm:flex items-center justify-center absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-amber-300 to-rose-500 border-4 border-[#090314]">
+            <i class="fa-solid fa-infinity text-xs text-black"></i>
+          </div>
+          <div class="order-1 mt-4 sm:mt-0 sm:pr-10 sm:text-right">
+            <div class="glass-card rounded-2xl p-5 border border-amber-300/35">
+              <p class="font-serif italic text-lg text-white">"This entire universe was made for you."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         MERGED ROMANTIC VIDEO CINEMA ("OUR LIVING MEMORIES")
+         ==================================================== -->
+    <section id="section-video-reel" class="max-w-5xl mx-auto px-4 py-14">
+      <div class="text-center mb-10">
+        <span class="text-xs uppercase tracking-[0.25em] text-amber-200/85">Living Frames of Us</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-white text-glow-rose mt-2">
+          Our Merged Memory Film 🎬❤️
+        </h2>
+        <p class="text-sm sm:text-base text-rose-100/75 mt-2 max-w-xl mx-auto">
+          Both of our special videos & curated moments merged into one continuous story—playing seamlessly with our romantic music.
+        </p>
+      </div>
+
+      <div class="glass-card rounded-3xl p-5 sm:p-8 border border-amber-300/30 relative overflow-hidden">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5 relative z-10">
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" id="reel-tab-merged" onclick="selectVideoReelMode('merged')"
+              class="px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-rose-600 to-amber-500 text-white shadow-md transition-all cursor-pointer">
+              <i class="fa-solid fa-film mr-1.5"></i> Merged Video (Scene I + II)
+            </button>
+            <button type="button" id="reel-tab-v1" onclick="selectVideoReelMode(0)"
+              class="px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-white/10 hover:bg-white/20 text-rose-100 border border-white/15 transition-all cursor-pointer">
+              Scene I • 10:06:26 PM
+            </button>
+            <button type="button" id="reel-tab-v2" onclick="selectVideoReelMode(1)"
+              class="px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-white/10 hover:bg-white/20 text-rose-100 border border-white/15 transition-all cursor-pointer">
+              Scene II • 10:06:26 PM (1)
+            </button>
+            <button type="button" id="reel-tab-montage" onclick="selectVideoReelMode('montage')"
+              class="px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-white/10 hover:bg-white/20 text-rose-100 border border-white/15 transition-all cursor-pointer">
+              <i class="fa-solid fa-wand-magic-sparkles mr-1.5"></i> Photo Cinema Montage
+            </button>
+          </div>
+        </div>
+
+        <!-- Main 16:9 Cinema Stage -->
+        <div class="relative w-full aspect-video max-h-[540px] rounded-2xl overflow-hidden bg-[#06020c] border border-rose-200/20 shadow-2xl flex items-center justify-center">
+          <video id="merged-video-player"
+            class="w-full h-full object-contain relative z-10 hidden"
+            controls
+            playsinline
+            preload="none">
+          </video>
+
+          <div id="montage-slide-layer" class="flex absolute inset-0 z-20 bg-[#05020a] flex-col items-center justify-center overflow-hidden">
+            <img id="montage-slide-img" src="" alt="Memory Montage" class="w-full h-full object-cover animate-ken-burns opacity-95" />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-6 sm:p-8 text-center">
+              <span id="montage-slide-tag" class="text-[11px] uppercase tracking-[0.25em] text-amber-200/90 block mb-1"></span>
+              <p id="montage-slide-caption" class="font-serif italic text-xl sm:text-3xl text-white text-glow-rose max-w-2xl mx-auto"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 flex flex-col sm:flex-row items-center justify-between gap-4 px-2">
+          <div class="text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+              <span id="video-scene-badge" class="text-xs uppercase tracking-[0.2em] text-amber-200/90 font-medium">
+                Merged Reel • Scene 1 of 2
+              </span>
+            </div>
+            <p id="video-scene-caption" class="font-serif italic text-xl sm:text-2xl text-rose-50 mt-1">
+              "Seeing you in motion is realizing that happiness isn't a place—it's the way my heart beats whenever you're near."
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2 shrink-0">
+            <button type="button" onclick="playPreviousReelPart()" class="w-10 h-10 rounded-full glass-pill flex items-center justify-center text-rose-200 hover:text-white transition-all cursor-pointer">
+              <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button type="button" onclick="playNextReelPart()" class="px-4 py-2 rounded-full glass-pill text-xs uppercase tracking-wider text-amber-200 hover:text-white flex items-center gap-1.5 transition-all cursor-pointer">
+              <span>Next Scene</span>
+              <i class="fa-solid fa-forward-step"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         INTERACTIVE CURATED PHOTO GALLERY
+         ==================================================== -->
+    <section id="section-memories" class="max-w-6xl mx-auto px-4 py-16">
+      <div class="text-center mb-10">
+        <span class="text-xs uppercase tracking-[0.25em] text-amber-200/80">Curated From Our Archive</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-white text-glow-rose mt-2">
+          Moments I Hold Closest 💕
+        </h2>
+        <p class="text-sm sm:text-base text-rose-200/75 mt-2 max-w-2xl mx-auto">
+          Every photo has its own little piece of my heart. Tap any card to flip it and read the secret note on the back, or open it full-screen.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-2.5">
+          <button type="button" id="filter-btn-curated" onclick="setGalleryViewMode('curated')"
+            class="px-5 py-2 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-rose-600 to-amber-500 text-white shadow-lg transition-all cursor-pointer">
+            ✨ 18 Hand-Picked Favorites
+          </button>
+          <button type="button" id="filter-btn-all" onclick="setGalleryViewMode('all')"
+            class="px-5 py-2 rounded-full text-xs sm:text-sm font-medium bg-white/10 hover:bg-white/20 text-rose-100 border border-white/15 transition-all cursor-pointer">
+            📸 View All 73 Photos in Our Archive
+          </button>
+          <button type="button" onclick="openPhotoLightbox(0)"
+            class="px-5 py-2 rounded-full text-xs sm:text-sm font-medium bg-amber-500/20 hover:bg-amber-500/35 text-amber-200 border border-amber-300/40 transition-all cursor-pointer">
+            <i class="fa-solid fa-expand mr-1.5"></i> Fullscreen Slideshow
+          </button>
+        </div>
+      </div>
+
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+    </section>
+
+    <!-- FULLSCREEN ROMANTIC LIGHTBOX MODAL -->
+    <div id="photo-lightbox-modal" class="hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex-col items-center justify-between p-4 sm:p-8">
+      <div class="w-full max-w-5xl flex items-center justify-between text-rose-100/80">
+        <div class="flex items-center gap-3">
+          <span class="text-lg">❤️</span>
+          <span id="lightbox-counter" class="text-xs sm:text-sm uppercase tracking-[0.2em] text-amber-200">Memory 1 of 18</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <button type="button" id="lightbox-autoplay-btn" onclick="toggleLightboxSlideshow()"
+            class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-rose-500/30 border border-white/15 text-xs uppercase tracking-wider text-white transition-all cursor-pointer">
+            <i class="fa-solid fa-play mr-1"></i> Auto-Play
+          </button>
+          <button type="button" onclick="closePhotoLightbox()"
+            class="w-9 h-9 rounded-full bg-white/10 hover:bg-rose-500/40 flex items-center justify-center text-white transition-all cursor-pointer">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="relative w-full max-w-4xl flex-1 flex items-center justify-center my-4 overflow-hidden">
+        <button type="button" onclick="stepLightbox(-1)"
+          class="absolute left-2 sm:left-4 z-20 w-11 h-11 rounded-full glass-pill flex items-center justify-center text-white hover:scale-110 transition-all cursor-pointer">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <img id="lightbox-img" src="" alt="Romantic Memory"
+          class="max-h-[62vh] max-w-full rounded-2xl object-contain border border-rose-200/20" />
+
+        <button type="button" onclick="stepLightbox(1)"
+          class="absolute right-2 sm:right-4 z-20 w-11 h-11 rounded-full glass-pill flex items-center justify-center text-white hover:scale-110 transition-all cursor-pointer">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="w-full max-w-3xl text-center pb-2">
+        <span id="lightbox-tag" class="inline-block text-xs px-3 py-0.5 rounded-full bg-rose-500/20 border border-rose-300/30 text-amber-200 mb-2"></span>
+        <h3 id="lightbox-title" class="font-serif text-2xl sm:text-3xl font-semibold text-white text-glow-rose"></h3>
+        <p id="lightbox-caption" class="font-serif italic text-lg sm:text-2xl text-rose-100/90 mt-1 leading-relaxed"></p>
+        <p id="lightbox-secret" class="text-xs sm:text-sm text-amber-200/80 mt-2 font-light"></p>
+      </div>
+    </div>
+
+    <!-- SEALED LOVE LETTER -->
+    <section id="section-letter" class="max-w-3xl mx-auto px-4 py-16">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-amber-300/30 relative overflow-hidden">
+        <div class="text-center mb-8">
+          <span class="text-xs uppercase tracking-[0.25em] text-amber-200/80">Written From My Heart</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-white text-glow-rose mt-2">
+            A Letter For You 💌
+          </h2>
+        </div>
+
+        <div id="letter-sealed-view" class="text-center py-8">
+          <p class="font-serif italic text-xl text-rose-100/85 mb-6">
+            This letter was sealed specifically for the moment our countdown ended.
+          </p>
+          <button type="button" onclick="openLoveLetter()"
+            class="group relative inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-rose-600 to-amber-500 text-white font-medium tracking-wider uppercase text-sm shadow-xl shadow-rose-600/30 hover:scale-105 transition-all cursor-pointer">
+            <span class="mr-2 text-lg">🕯️</span>
+            <span>Break the Golden Seal & Read</span>
+          </button>
+        </div>
+
+        <div id="letter-open-view" class="hidden space-y-5 text-rose-50/95 font-serif text-xl sm:text-2xl leading-relaxed border-t border-rose-300/20 pt-8">
+          <p class="font-script text-4xl text-amber-200 mb-4">My Dearest Love,</p>
+          <p>
+            When our story began at 2:28 AM on June 29, 2026, my heartbeat was racing so fast I barely had the strength to stand. I told you back then that I wasn't perfect, that you were only the second person I ever had the courage to confess to—and that your shining hair and your amazing mentality completely captured my soul.
+          </p>
+          <p>
+            Over these 4 magical months, every second with you became a memory I treasure. You didn't laugh at my nervous heart—instead, you turned ordinary days into poetry and taught me what it truly feels like to be home.
+          </p>
+          <p>
+            Thank you for every smile, every late-night talk, every gentle word, and for being the one person who changed everything. Happy 4 Months Anniversary, my love. This universe—and my whole heart—belongs to you.
+          </p>
+          <div class="pt-6 text-right">
+            <p class="text-base uppercase tracking-widest text-rose-300/80 font-sans">Forever Yours,</p>
+            <p class="font-script text-4xl text-amber-200 mt-1">With All My Love ❤️</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE STARLIGHT REASONS GENERATOR -->
+    <section id="section-stars" class="max-w-3xl mx-auto px-4 py-12 text-center">
+      <div class="glass-card rounded-3xl p-8 sm:p-10 border border-rose-300/25">
+        <span class="text-3xl inline-block mb-3">🌟</span>
+        <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-white text-glow-rose">
+          Starlight Notes For You
+        </h3>
+        <p class="text-sm text-rose-200/75 mt-1 mb-6">
+          Whenever you want a reminder of how deeply you are loved, pluck a star from our sky:
+        </p>
+
+        <div class="min-h-[92px] flex items-center justify-center px-4 py-5 rounded-2xl bg-black/40 border border-white/10 mb-6">
+          <p id="starlight-reason-text" class="font-serif italic text-2xl sm:text-3xl text-amber-100 transition-all duration-300">
+            "Because your mentality and your kind heart are the most beautiful things I have ever known."
+          </p>
+        </div>
+
+        <button type="button" onclick="nextStarlightReason()"
+          class="px-7 py-3.5 rounded-full bg-white/10 hover:bg-rose-500/30 border border-rose-300/40 text-sm font-medium text-white tracking-wider uppercase transition-all hover:scale-105 cursor-pointer">
+          ✨ Reveal Another Reason
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER WITH REPLAY CONTROLS -->
+    <footer class="max-w-4xl mx-auto px-4 pt-12 pb-8 text-center border-t border-white/10 mt-12">
+      <p class="font-serif italic text-lg text-rose-200/80 mb-4">
+        Made with every beat of my heart • June 29, 2026 → Forever ❤️
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-rose-200/60">
+        <button type="button" onclick="goToStage(1.5)" class="px-4 py-2 rounded-full bg-white/5 hover:bg-pink-500/20 border border-white/10 text-pink-200 transition-all cursor-pointer">
+          <i class="fa-solid fa-puzzle-piece mr-1.5"></i> Play Our Photo Puzzle
+        </button>
+        <button type="button" onclick="replayStage3Cinematic()" class="px-4 py-2 rounded-full bg-white/5 hover:bg-amber-500/20 border border-white/10 text-amber-200 transition-all cursor-pointer">
+          <i class="fa-solid fa-wand-sparkles mr-1.5"></i> Replay Souls Unlock
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ====================================================
+       CREATOR CUSTOMIZATION & TESTING MODAL
+       ==================================================== -->
+  <div id="creator-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 border border-rose-300/30 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+        <div>
+          <h3 class="font-serif text-2xl font-semibold text-white">Creator Customization & Preview</h3>
+          <p class="text-xs text-rose-200/70">Customize her secret nickname, load media, or jump to any stage</p>
+        </div>
+        <button type="button" onclick="toggleCreatorModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-rose-500/30 flex items-center justify-center text-white cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-amber-200 mb-1">
+            Accepted Secret Nicknames (comma-separated, case-insensitive)
+          </label>
+          <input id="cfg-nicknames-input" type="text" style="user-select: text;"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/20 text-white text-sm" />
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-amber-200 mb-1">
+            Display Pet Name in Anniversary Header
+          </label>
+          <input id="cfg-display-name" type="text" style="user-select: text;"
+            class="w-full px-3.5 py-2.5 rounded-xl bg-black/50 border border-white/20 text-white text-sm" />
+        </div>
+
+        <div class="pt-2 flex justify-end gap-2">
+          <button type="button" onclick="saveCreatorSettings()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 text-white font-medium text-xs uppercase tracking-wider cursor-pointer">
+            Save Settings
+          </button>
+        </div>
+
+        <hr class="border-white/10 my-4" />
+
+        <div class="space-y-2.5">
+          <p class="text-xs uppercase tracking-wider text-amber-200">Load Separate Audio & Media Files</p>
+          <button type="button" onclick="document.getElementById('zip-media-input').click()"
+            class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-rose-600/40 to-amber-500/40 border border-amber-300/40 text-white text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+            <i class="fa-solid fa-file-zipper text-amber-200"></i>
+            <span>1. Select WhatsApp .ZIP or Photo/Video Files</span>
+          </button>
+          <button type="button" onclick="document.getElementById('confession-audio-file-input').click()"
+            class="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-rose-500/30 border border-rose-300/40 text-white text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+            <i class="fa-solid fa-microphone-lines text-rose-300"></i>
+            <span>2. Select Confession Voice File (.OGG)</span>
+          </button>
+          <button type="button" onclick="document.getElementById('bg-music-file-input').click()"
+            class="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-amber-500/30 border border-amber-300/40 text-white text-xs font-medium uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+            <i class="fa-solid fa-music text-amber-200"></i>
+            <span>3. Optional: Select Custom Background Music File (.MP3)</span>
+          </button>
+        </div>
+
+        <hr class="border-white/10 my-4" />
+
+        <div>
+          <p class="text-xs uppercase tracking-wider text-rose-200 mb-2.5">Quick Stage Jump & Simulation</p>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button type="button" onclick="toggleCreatorModal(); goToStage(1);" class="p-2.5 rounded-xl bg-white/5 hover:bg-rose-500/25 border border-white/10 text-left cursor-pointer">
+              1. Password Gate
+            </button>
+            <button type="button" onclick="toggleCreatorModal(); goToStage(1.5);" class="p-2.5 rounded-xl bg-pink-500/20 hover:bg-pink-500/35 border border-pink-300/40 text-pink-200 text-left cursor-pointer">
+              1.5. Photo Puzzle Game 🧩
+            </button>
+            <button type="button" onclick="toggleCreatorModal(); goToStage(2); setCountdownSimulation('live');" class="p-2.5 rounded-xl bg-white/5 hover:bg-rose-500/25 border border-white/10 text-left cursor-pointer">
+              2. Live Countdown
+            </button>
+            <button type="button" onclick="toggleCreatorModal(); goToStage(2); setCountdownSimulation(10);" class="p-2.5 rounded-xl bg-white/5 hover:bg-rose-500/25 border border-white/10 text-left cursor-pointer">
+              2b. Final 10s Heartbeat
+            </button>
+            <button type="button" onclick="toggleCreatorModal(); triggerStage3UnlockSequence();" class="p-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/35 border border-amber-300/40 text-amber-200 text-left cursor-pointer">
+              3. Souls Embrace Unlock
+            </button>
+            <button type="button" onclick="toggleCreatorModal(); goToStage(4);" class="p-2.5 rounded-xl bg-white/5 hover:bg-rose-500/25 border border-white/10 text-left cursor-pointer">
+              4. Main Anniversary Site
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================
+       APPLICATION SCRIPT (SEPARATE MUSIC & CONFESSION AUDIO)
+       ==================================================== -->
+  <script>
+    /*************************************************************
+     * 1. CONFIGURATION & TIMESTAMPS (ASIA/DHAKA UTC+6)
+     *************************************************************/
+    const STORAGE_KEY_UNLOCKED = 'our_story_unlocked_v3';
+    const STORAGE_KEY_CONFIG = 'our_story_creator_cfg_v3';
+
+    // Target: October 29, 2026 at 2:27:50 AM Asia/Dhaka (UTC+6)
+    const TARGET_TIMESTAMP_MS = new Date('2026-10-29T02:27:50+06:00').getTime();
+
+    // Origin: June 29, 2026 at 2:28:00 AM Asia/Dhaka (UTC+6)
+    const ORIGIN_TIMESTAMP_MS = new Date('2026-06-29T02:28:00+06:00').getTime();
+
+    const DEFAULT_CONFIG = {
+      nicknames: [
+        'jaan', 'jan', 'jaanpakhi', 'baby', 'babe', 'my love', 'love', 'princess',
+        'sweetheart', 'babu', 'shona', 'shonamoni', 'pakhi', 'moni', 'moyna',
+        'tuntuni', 'kolija', 'pori', 'rajkonna', 'cutie', 'angel', 'honey',
+        'bou', 'wifey', 'moon', 'sunshine', 'queen', 'beautiful', 'pagli',
+        'puchku', 'bubu', 'momo', 'golu', 'motu', 'chubby', 'jaaneman', 'priyo',
+        'mishti', 'putul', 'konna', 'priyotoma', 'valobasha', 'bhalobasha', 'darling', 'dear'
+      ],
+      displayName: 'My Love'
+    };
+
+    const memoryStorageFallback = {};
+    function safeGetStorage(key) {
+      try { return localStorage.getItem(key); } catch (e) { return memoryStorageFallback[key] || null; }
+    }
+    function safeSetStorage(key, val) {
+      try { localStorage.setItem(key, val); } catch (e) { memoryStorageFallback[key] = val; }
+    }
+
+    let appConfig = loadCreatorConfig();
+
+    function loadCreatorConfig() {
+      try {
+        const raw = safeGetStorage(STORAGE_KEY_CONFIG);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed.nicknames) && parsed.nicknames.length > 0) {
+            return parsed;
+          }
+        }
+      } catch (e) {}
+      return { ...DEFAULT_CONFIG };
+    }
+
+    /*************************************************************
+     * 2. STATE & CONFESSION TAPE TRANSCRIPT
+     *************************************************************/
+    let currentStage = 1;
+    let wrongPasswordIndex = 0;
+    let welcomeSequenceAborted = false;
+    let stage3Aborted = false;
+    let localRepoMediaAvailable = false;
+
+    const WRONG_MESSAGES = [
+      "Not quite, my love ❤️",
+      "Try again ✨",
+      "Only one special person knows the answer 💕"
+    ];
+
+    const ROTATING_COUNTDOWN_QUOTES = [
+      "Every second became a memory.",
+      "My favorite place is wherever you are.",
+      "You made ordinary moments unforgettable.",
+      "You became my favorite chapter.",
+      "Some love stories deserve their own universe."
+    ];
+    let currentQuoteIndex = 0;
+
+    const STARLIGHT_REASONS = [
+      "Because your mentality and your kind heart are the most beautiful things I have ever known.",
+      "Because even when my heartbeat was racing and I barely had the strength to stand, my heart knew it was you.",
+      "Because your hair still shines just like the first time I noticed you.",
+      "Because 2:28 AM on June 29, 2026 was the moment my life truly started making sense.",
+      "Because you turned these 4 months into a fairytale I never want to end.",
+      "Because you are my peace, my safe harbor, and my favorite notification."
+    ];
+    let currentReasonIndex = 0;
+
+    const CONFESSION_TAPE_LINES = [
+      {
+        sec: 0,
+        timeLabel: "0:00 • The Story Begins",
+        bn: "এখন কাহিনী হলো... সেই ক্লাস থ্রি থেকে কাহিনী তো কইলাম, তুমি তো ঘুমায়ে গেছিলা...",
+        en: "Now the story is... I told you everything since Class 3, and you had fallen fast asleep..."
+      },
+      {
+        sec: 55,
+        timeLabel: "0:55 • Don't Laugh Please",
+        bn: "হাসবা না প্লিজ, তুমি হাসতেছো লিটারেলি এখন আমি জানি...",
+        en: "Please don't laugh, I literally know you have that cute smile on your face right now..."
+      },
+      {
+        sec: 78,
+        timeLabel: "1:18 • Your Shining Hair & Soul",
+        bn: "ইয়েস আই হ্যাভ... তোমার চুল এখনো শাইন করে, আর তোমার মেন্টালিটিও এত ভালো...",
+        en: "Yes I still have feelings... your hair still shines, and your mentality is so genuinely amazing..."
+      },
+      {
+        sec: 105,
+        timeLabel: "1:45 • Let's Try Together",
+        bn: "পাস্ট ইজ পাস্ট, পাস্ট ম্যাটার করে না। উই ক্যান গো ফর সামথিং, ট্রাই করতে পারি এটলিস্ট...",
+        en: "The past is the past, it doesn't matter. We can go for something real, at least we can try..."
+      },
+      {
+        sec: 122,
+        timeLabel: "2:02 • Honest & Unfiltered",
+        bn: "আই নো আমি পারফেক্ট না... দুপুরে বেলার নোটটা তোমাকে মিন করেই দিছিলাম।",
+        en: "I know I'm not perfect... that afternoon note was meant only for you."
+      },
+      {
+        sec: 162,
+        timeLabel: "2:42 • My Racing Heartbeat",
+        bn: "সোজা কথা বললাম, আমার হার্টবিট অনেক এখন। আমি একজনরে করছিলাম প্রপোজ, সেকেন্ড তোমারে বললাম...",
+        en: "I spoke straight from the heart—my heartbeat is racing right now. You are only the second person I have ever confessed to..."
+      },
+      {
+        sec: 195,
+        timeLabel: "3:15 • Real Affection",
+        bn: "প্লিজ এইটা মজা নিও না... আই বিলিভড ইউ, এন্ড হুম আসলেই অ্যাফেকশন একটা ক্রিয়েট হইছে।",
+        en: "Please don't take this as a joke... I believed in you, and yes, a deep, real affection has truly been created."
+      },
+      {
+        sec: 212,
+        timeLabel: "3:32 • Shyness & Love",
+        bn: "কারণ তোমার মেন্টালিটি যা জোস... ওকে শেষ, আমার আর দাঁড়ায় থাকার ক্ষমতা নাই ❤️",
+        en: "Because your mentality is just so incredible... I barely even have the strength to stand anymore ❤️"
+      }
+    ];
+    let currentConfessionIndex = 0;
+    let confessionCycleTimer = null;
+
+    /*************************************************************
+     * 3. SEPARATE BACKGROUND MUSIC & CONFESSION AUDIO ENGINE
+     *    - Background Music plays across the site
+     *    - Playing the Confession AUTOMATICALLY PAUSES Background Music
+     *    - Pausing/Ending the Confession AUTOMATICALLY RESUMES Background Music
+     *************************************************************/
+    let audioCtx = null;
+    let masterInstGain = null;
+    let isMusicPlaying = false;
+    let wasMusicPlayingBeforeConfession = false;
+    let isConfessionPlaying = false;
+    let musicSchedulerTimer = null;
+    let barStep = 0;
+    let instrumentalStyle = 'lofi';
+    let instrumentalVolume = 0.80;
+
+    let hasCustomBgMusicFileLoaded = false;
+    let hasConfessionVoiceFileLoaded = false;
+
+    const CHORD_PROGRESSION = [
+      {
+        pad: [174.61, 220.00, 261.63, 329.63],
+        bass: 87.31,
+        melody: [523.25, 659.25, 587.33, 523.25, 440.00, 523.25, 659.25, 783.99]
+      },
+      {
+        pad: [164.81, 196.00, 261.63, 329.63],
+        bass: 98.00,
+        melody: [659.25, 587.33, 523.25, 392.00, 440.00, 523.25, 587.33, 523.25]
+      },
+      {
+        pad: [146.83, 220.00, 261.63, 349.23],
+        bass: 73.42,
+        melody: [440.00, 523.25, 659.25, 587.33, 523.25, 440.00, 392.00, 440.00]
+      },
+      {
+        pad: [116.54, 174.61, 220.00, 293.66],
+        bass: 116.54,
+        melody: [587.33, 523.25, 440.00, 349.23, 392.00, 440.00, 523.25, 587.33]
+      }
+    ];
+
+    function initAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+          masterInstGain = audioCtx.createGain();
+          masterInstGain.gain.setValueAtTime(instrumentalVolume, audioCtx.currentTime);
+          masterInstGain.connect(audioCtx.destination);
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playWarmPadChord(freqs, duration = 4.2) {
+      if (!audioCtx || !isMusicPlaying || isConfessionPlaying || hasCustomBgMusicFileLoaded) return;
+      try {
+        const now = audioCtx.currentTime;
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(instrumentalStyle === 'lofi' ? 920 : 1500, now);
+
+        const padGain = audioCtx.createGain();
+        const baseVol = isFinal60Active ? 0.024 : 0.042;
+        padGain.gain.setValueAtTime(0.0001, now);
+        padGain.gain.linearRampToValueAtTime(baseVol, now + 0.9);
+        padGain.gain.setValueAtTime(baseVol, now + duration - 1.0);
+        padGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+        filter.connect(padGain);
+        padGain.connect(masterInstGain);
+
+        freqs.forEach((f) => {
+          const osc = audioCtx.createOscillator();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(f, now);
+          osc.connect(filter);
+          osc.start(now);
+          osc.stop(now + duration);
+        });
+      } catch (e) {}
+    }
+
+    function playWarmBassNote(freq, duration = 2.0) {
+      if (!audioCtx || !isMusicPlaying || isConfessionPlaying || hasCustomBgMusicFileLoaded) return;
+      try {
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+
+        const vol = isFinal60Active ? 0.05 : 0.085;
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.linearRampToValueAtTime(vol, now + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+        osc.connect(gain);
+        gain.connect(masterInstGain);
+        osc.start(now);
+        osc.stop(now + duration);
+      } catch (e) {}
+    }
+
+    function playLofiHiHatTick() {
+      if (!audioCtx || !isMusicPlaying || isConfessionPlaying || hasCustomBgMusicFileLoaded) return;
+      try {
+        const now = audioCtx.currentTime;
+        const bufferSize = Math.floor(audioCtx.sampleRate * 0.035);
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.3));
+        }
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'highpass';
+        filter.frequency.setValueAtTime(5000, now);
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.018, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.035);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(masterInstGain);
+        noise.start(now);
+      } catch (e) {}
+    }
+
+    function playRomanticMelodyNote(freq, duration = 1.7, isOneShotChime = false) {
+      if (!audioCtx || ((!isMusicPlaying || isConfessionPlaying || hasCustomBgMusicFileLoaded) && !isOneShotChime)) return;
+      try {
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = instrumentalStyle === 'strings' ? 'triangle' : 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+
+        let peakGain = isFinal60Active ? 0.038 : 0.068;
+        if (isOneShotChime) peakGain *= 0.35;
+
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.linearRampToValueAtTime(peakGain, now + 0.025);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+        osc.connect(gain);
+        gain.connect(masterInstGain || audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + duration);
+      } catch (e) {}
+    }
+
+    function stepInstrumentalSequencer() {
+      if (!isMusicPlaying || isConfessionPlaying || !audioCtx || hasCustomBgMusicFileLoaded) return;
+
+      const measureIndex = Math.floor(barStep / 8) % CHORD_PROGRESSION.length;
+      const stepInMeasure = barStep % 8;
+      const currentMeasure = CHORD_PROGRESSION[measureIndex];
+
+      if (stepInMeasure === 0) {
+        playWarmPadChord(currentMeasure.pad, 4.3);
+        playWarmBassNote(currentMeasure.bass, 2.1);
+        if (instrumentalStyle === 'lofi') playHeartbeatSound(0.32);
+      } else if (stepInMeasure === 4) {
+        playWarmBassNote(currentMeasure.bass * 1.5, 1.9);
+        if (instrumentalStyle === 'lofi') playHeartbeatSound(0.26);
+      }
+
+      if (instrumentalStyle === 'lofi' && stepInMeasure % 2 === 1) {
+        playLofiHiHatTick();
+      }
+
+      const noteFreq = currentMeasure.melody[stepInMeasure];
+      if (noteFreq) {
+        playRomanticMelodyNote(noteFreq, isFinal60Active ? 2.2 : 1.65);
+      }
+
+      barStep++;
+    }
+
+    function setInstrumentalStyle(style) {
+      instrumentalStyle = style;
+      ['lofi', 'dreamy', 'strings'].forEach(s => {
+        const btn = document.getElementById(`vibe-btn-${s}`);
+        if (!btn) return;
+        if (s === style) {
+          btn.className = "py-1.5 px-2 rounded-lg bg-rose-500/30 border border-rose-300/50 text-white font-medium transition-all cursor-pointer";
+        } else {
+          btn.className = "py-1.5 px-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-rose-100 transition-all cursor-pointer";
+        }
+      });
+      if (!isMusicPlaying && !isConfessionPlaying) toggleBackgroundMusic(true);
+    }
+
+    function updateInstrumentalVolume(val) {
+      instrumentalVolume = Number(val) / 100;
+      const lbl = document.getElementById('inst-vol-label');
+      if (lbl) lbl.textContent = `${val}%`;
+      if (masterInstGain && audioCtx) {
+        masterInstGain.gain.setValueAtTime(instrumentalVolume, audioCtx.currentTime);
+      }
+      const bgFileEl = document.getElementById('bg-music-file-audio');
+      if (bgFileEl) bgFileEl.volume = instrumentalVolume;
+    }
+
+    function toggleMusicMixerPanel() {
+      const panel = document.getElementById('music-mixer-panel');
+      if (panel) panel.classList.toggle('hidden');
+    }
+
+    // Upload Optional Custom Background Music File (Separate from Confession)
+    function handleCustomBgMusicUpload(event) {
+      const file = (event.target.files || [])[0];
+      if (!file) return;
+      loadCustomBgMusicBlob(file, file.name);
+    }
+
+    function loadCustomBgMusicBlob(blob, name = 'Custom Music') {
+      const bgAudioEl = document.getElementById('bg-music-file-audio');
+      if (!bgAudioEl) return;
+      bgAudioEl.src = URL.createObjectURL(blob);
+      bgAudioEl.volume = instrumentalVolume;
+      hasCustomBgMusicFileLoaded = true;
+
+      const statusEl = document.getElementById('bg-music-file-status');
+      if (statusEl) statusEl.textContent = `Music: ${name.slice(0, 18)} 🎵`;
+      saveBlobToIDB('__custom_bg_music__', blob);
+
+      if (!isConfessionPlaying) {
+        toggleBackgroundMusic(true);
+      }
+    }
+
+    // Upload Confession Voice Note (.ogg) (Separate from Background Music)
+    function handleConfessionAudioUpload(event) {
+      const file = (event.target.files || [])[0];
+      if (!file) return;
+      loadConfessionVoiceBlob(file, file.name);
+    }
+
+    function loadConfessionVoiceBlob(blob, name = 'Confession Voice Note') {
+      const confAudioEl = document.getElementById('confession-voice-audio');
+      if (!confAudioEl) return;
+      confAudioEl.src = URL.createObjectURL(blob);
+      confAudioEl.volume = 1.0;
+      hasConfessionVoiceFileLoaded = true;
+
+      const statusEl = document.getElementById('voice-file-status');
+      if (statusEl) statusEl.textContent = `Confession: ${name.slice(0, 16)} ❤️`;
+      const badgeEl = document.getElementById('confession-audio-status-badge');
+      if (badgeEl) badgeEl.textContent = `Loaded: ${name} (Ready to Play)`;
+
+      saveBlobToIDB('__custom_confession_audio__', blob);
+    }
+
+    // Toggle Background Music (Top-right button)
+    function toggleBackgroundMusic(forceState = null) {
+      initAudioContext();
+
+      // If the user manually turns ON background music while the confession is playing, pause the confession first so they never clash
+      if ((forceState === true || (forceState === null && !isMusicPlaying)) && isConfessionPlaying) {
+        pauseConfessionExperience(false);
+      }
+
+      isMusicPlaying = forceState !== null ? forceState : !isMusicPlaying;
+
+      const label = document.getElementById('music-label');
+      const bars = document.getElementById('music-bars');
+      const icon = document.getElementById('music-icon');
+      const bgFileEl = document.getElementById('bg-music-file-audio');
+
+      if (isMusicPlaying) {
+        label.textContent = 'Music: Playing';
+        bars.classList.remove('hidden');
+        bars.classList.add('flex');
+        icon.className = 'fa-solid fa-volume-high';
+
+        if (hasCustomBgMusicFileLoaded && bgFileEl) {
+          bgFileEl.volume = instrumentalVolume;
+          bgFileEl.play().catch(() => {});
+        } else {
+          if (!musicSchedulerTimer) {
+            stepInstrumentalSequencer();
+            musicSchedulerTimer = setInterval(stepInstrumentalSequencer, 540);
+          }
+        }
+      } else {
+        label.textContent = isConfessionPlaying ? 'Paused for Confession 🎙️' : 'Play Music 🎹';
+        bars.classList.add('hidden');
+        bars.classList.remove('flex');
+        icon.className = 'fa-solid fa-music';
+
+        if (musicSchedulerTimer) {
+          clearInterval(musicSchedulerTimer);
+          musicSchedulerTimer = null;
+        }
+        if (bgFileEl) {
+          bgFileEl.pause();
+        }
+      }
+    }
+
+    // Automatically called when Confession starts playing
+    function pauseBackgroundMusicForConfession() {
+      if (isMusicPlaying) {
+        wasMusicPlayingBeforeConfession = true;
+        isMusicPlaying = false;
+
+        if (musicSchedulerTimer) {
+          clearInterval(musicSchedulerTimer);
+          musicSchedulerTimer = null;
+        }
+        const bgFileEl = document.getElementById('bg-music-file-audio');
+        if (bgFileEl) bgFileEl.pause();
+
+        const label = document.getElementById('music-label');
+        const bars = document.getElementById('music-bars');
+        const icon = document.getElementById('music-icon');
+        if (label) label.textContent = 'Paused for Confession 🎙️';
+        if (bars) {
+          bars.classList.add('hidden');
+          bars.classList.remove('flex');
+        }
+        if (icon) icon.className = 'fa-solid fa-pause';
+      }
+    }
+
+    // Automatically called when Confession is paused or finishes playing
+    function resumeBackgroundMusicAfterConfession() {
+      if (wasMusicPlayingBeforeConfession) {
+        wasMusicPlayingBeforeConfession = false;
+        toggleBackgroundMusic(true);
+      }
+    }
+
+    function playHeartbeatSound(intensity = 1.0) {
+      initAudioContext();
+      if (!audioCtx) return;
+      try {
+        const now = audioCtx.currentTime;
+        triggerThump(now, 62, 0.15 * intensity);
+        triggerThump(now + 0.22, 48, 0.11 * intensity);
+      } catch (e) {}
+    }
+
+    function triggerThump(startTime, freq, maxGain) {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, startTime);
+      osc.frequency.exponentialRampToValueAtTime(28, startTime + 0.18);
+
+      gain.gain.setValueAtTime(0.001, startTime);
+      gain.gain.linearRampToValueAtTime(maxGain, startTime + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.0001, startTime + 0.21);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(startTime);
+      osc.stop(startTime + 0.23);
+    }
+
+    function playMagicalChime() {
+      initAudioContext();
+      if (!audioCtx) return;
+      const chord = [523.25, 659.25, 783.99, 1046.50];
+      chord.forEach((f, idx) => {
+        setTimeout(() => {
+          if (!audioCtx) return;
+          const now = audioCtx.currentTime;
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(f, now);
+          gain.gain.setValueAtTime(0.001, now);
+          gain.gain.exponentialRampToValueAtTime(0.05, now + 0.04);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.2);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 2.3);
+        }, idx * 95);
+      });
+    }
+
+    function playEmotionalSwell() {
+      initAudioContext();
+      if (!audioCtx) return;
+      const warmChord = [261.63, 329.63, 392.00, 523.25];
+      warmChord.forEach((freq) => {
+        try {
+          const now = audioCtx.currentTime;
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+          gain.gain.setValueAtTime(0.0001, now);
+          gain.gain.linearRampToValueAtTime(0.032, now + 1.2);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 4.5);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 4.6);
+        } catch (e) {}
+      });
+    }
+
+    /*************************************************************
+     * 3B. INTERACTIVE CONFESSION TAPE PLAYER (PAUSES BG MUSIC)
+     *************************************************************/
+    function formatSecondsMMSS(sec) {
+      if (!isFinite(sec) || sec < 0) return '0:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${String(s).padStart(2, '0')}`;
+    }
+
+    function setupConfessionAudioListeners() {
+      const confAudioEl = document.getElementById('confession-voice-audio');
+      if (!confAudioEl) return;
+
+      confAudioEl.addEventListener('play', () => {
+        isConfessionPlaying = true;
+        pauseBackgroundMusicForConfession();
+        updateConfessionPlayerUI(true);
+      });
+
+      confAudioEl.addEventListener('pause', () => {
+        isConfessionPlaying = false;
+        updateConfessionPlayerUI(false);
+        resumeBackgroundMusicAfterConfession();
+      });
+
+      confAudioEl.addEventListener('ended', () => {
+        isConfessionPlaying = false;
+        if (confessionCycleTimer) {
+          clearInterval(confessionCycleTimer);
+          confessionCycleTimer = null;
+        }
+        updateConfessionPlayerUI(false);
+        resumeBackgroundMusicAfterConfession();
+      });
+
+      confAudioEl.addEventListener('timeupdate', () => {
+        const cur = confAudioEl.currentTime || 0;
+        const dur = confAudioEl.duration || 225;
+        const slider = document.getElementById('confession-seek-slider');
+        const timeDisp = document.getElementById('confession-time-display');
+        if (slider && dur > 0) {
+          slider.value = ((cur / dur) * 100).toFixed(1);
+        }
+        if (timeDisp) {
+          timeDisp.textContent = `${formatSecondsMMSS(cur)} / ${formatSecondsMMSS(dur)}`;
+        }
+
+        // Sync active transcript line to audio timestamp
+        let matchedIdx = 0;
+        for (let i = 0; i < CONFESSION_TAPE_LINES.length; i++) {
+          if (cur >= CONFESSION_TAPE_LINES[i].sec) {
+            matchedIdx = i;
+          }
+        }
+        if (matchedIdx !== currentConfessionIndex) {
+          selectConfessionLine(matchedIdx, false);
+        }
+      });
+    }
+
+    function updateConfessionPlayerUI(playing) {
+      const btnIcon = document.getElementById('confession-play-icon');
+      const btnLabel = document.getElementById('confession-play-label');
+      const badgeEl = document.getElementById('confession-audio-status-badge');
+      const dotEl = document.getElementById('confession-status-dot');
+
+      if (playing) {
+        if (btnIcon) btnIcon.className = 'fa-solid fa-pause';
+        if (btnLabel) btnLabel.textContent = 'Pause Confession (Resume Music)';
+        if (badgeEl) badgeEl.textContent = '🎙️ Playing Confession • Background Music Paused';
+        if (dotEl) dotEl.className = 'w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping';
+      } else {
+        if (btnIcon) btnIcon.className = 'fa-solid fa-play';
+        if (btnLabel) btnLabel.textContent = 'Play My Confession 🎙️';
+        if (badgeEl) {
+          badgeEl.textContent = isMusicPlaying
+            ? '🎵 Confession Paused • Background Music Resumed'
+            : 'Ready: WhatsApp Audio 2026-10-28 at 11.14.27 PM.ogg';
+        }
+        if (dotEl) dotEl.className = 'w-2.5 h-2.5 rounded-full bg-rose-400';
+      }
+    }
+
+    function seekConfessionAudio(percentVal) {
+      const confAudioEl = document.getElementById('confession-voice-audio');
+      if (!confAudioEl || !hasConfessionVoiceFileLoaded) return;
+      const dur = confAudioEl.duration || 225;
+      confAudioEl.currentTime = (Number(percentVal) / 100) * dur;
+    }
+
+    function renderConfessionLines() {
+      const grid = document.getElementById('confession-lines-grid');
+      if (!grid) return;
+      grid.innerHTML = CONFESSION_TAPE_LINES.map((item, idx) => {
+        const isActive = idx === currentConfessionIndex;
+        return `
+          <button type="button" onclick="selectConfessionLine(${idx}, true)"
+            class="p-3.5 rounded-xl border text-left transition-all cursor-pointer ${
+              isActive
+                ? 'bg-rose-500/25 border-rose-300/60 shadow-md'
+                : 'bg-white/5 hover:bg-white/10 border-white/10'
+            }">
+            <div class="flex items-center justify-between text-[10px] uppercase tracking-wider text-amber-200/80 mb-1">
+              <span>${item.timeLabel}</span>
+              <span>${isActive ? '🎙️ Active' : 'Tap to Jump'}</span>
+            </div>
+            <p class="font-bengali text-xs sm:text-sm text-white line-clamp-1">${item.bn}</p>
+            <p class="font-serif italic text-xs text-rose-200/75 line-clamp-1 mt-0.5">${item.en}</p>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectConfessionLine(idx, seekAudio = false) {
+      currentConfessionIndex = idx % CONFESSION_TAPE_LINES.length;
+      const item = CONFESSION_TAPE_LINES[currentConfessionIndex];
+      const bnEl = document.getElementById('confession-active-bengali');
+      const enEl = document.getElementById('confession-active-english');
+      const chapEl = document.getElementById('confession-stage-Chapter');
+
+      if (bnEl && enEl) {
+        bnEl.textContent = `"${item.bn}"`;
+        enEl.textContent = `"${item.en}"`;
+        if (chapEl) chapEl.textContent = item.timeLabel;
+      }
+
+      if (seekAudio) {
+        const confAudioEl = document.getElementById('confession-voice-audio');
+        if (confAudioEl && hasConfessionVoiceFileLoaded) {
+          confAudioEl.currentTime = item.sec || 0;
+          if (confAudioEl.paused) {
+            toggleConfessionExperience();
+          }
+        } else {
+          playHeartbeatSound(0.5);
+        }
+      }
+      renderConfessionLines();
+    }
+
+    function pauseConfessionExperience(autoResumeMusic = true) {
+      const confAudioEl = document.getElementById('confession-voice-audio');
+      if (confessionCycleTimer) {
+        clearInterval(confessionCycleTimer);
+        confessionCycleTimer = null;
+      }
+      if (confAudioEl && !confAudioEl.paused) {
+        if (!autoResumeMusic) wasMusicPlayingBeforeConfession = false;
+        confAudioEl.pause();
+      } else {
+        isConfessionPlaying = false;
+        if (autoResumeMusic) resumeBackgroundMusicAfterConfession();
+        updateConfessionPlayerUI(false);
+      }
+    }
+
+    function toggleConfessionExperience() {
+      initAudioContext();
+      const confAudioEl = document.getElementById('confession-voice-audio');
+
+      // If confession is currently playing -> Pause it and automatically resume background music!
+      if (isConfessionPlaying) {
+        pauseConfessionExperience(true);
+        return;
+      }
+
+      // Otherwise start playing Confession and automatically pause background music!
+      isConfessionPlaying = true;
+      pauseBackgroundMusicForConfession();
+      updateConfessionPlayerUI(true);
+
+      if (confAudioEl && hasConfessionVoiceFileLoaded) {
+        confAudioEl.volume = 1.0;
+        confAudioEl.play().catch(() => {
+          startSimulatedConfessionTranscriptCycle();
+        });
+      } else {
+        startSimulatedConfessionTranscriptCycle();
+      }
+    }
+
+    function startSimulatedConfessionTranscriptCycle() {
+      selectConfessionLine(currentConfessionIndex, false);
+      if (confessionCycleTimer) clearInterval(confessionCycleTimer);
+      confessionCycleTimer = setInterval(() => {
+        currentConfessionIndex = (currentConfessionIndex + 1) % CONFESSION_TAPE_LINES.length;
+        selectConfessionLine(currentConfessionIndex, false);
+      }, 4500);
+    }
+
+    /*************************************************************
+     * 4. 60FPS STARRY SKY & FLOATING HEARTS CANVAS
+     *************************************************************/
+    const cosmosCanvas = document.getElementById('cosmos-canvas');
+    const cosmosCtx = cosmosCanvas.getContext('2d');
+    let stars = [];
+    let floatingHearts = [];
+    let glowDust = [];
+
+    function resizeCosmosCanvas() {
+      cosmosCanvas.width = window.innerWidth || 1024;
+      cosmosCanvas.height = window.innerHeight || 768;
+    }
+
+    function initCosmosEntities() {
+      resizeCosmosCanvas();
+      stars = [];
+      floatingHearts = [];
+      glowDust = [];
+
+      const starCount = Math.min(110, Math.floor((cosmosCanvas.width * cosmosCanvas.height) / 11000));
+      for (let i = 0; i < starCount; i++) {
+        stars.push({
+          x: Math.random() * cosmosCanvas.width,
+          y: Math.random() * cosmosCanvas.height,
+          radius: Math.random() * 1.5 + 0.4,
+          alpha: Math.random() * 0.75 + 0.2,
+          twinkleSpeed: Math.random() * 0.014 + 0.004,
+          driftY: -(Math.random() * 0.14 + 0.03)
+        });
+      }
+
+      for (let i = 0; i < 14; i++) {
+        floatingHearts.push(createFloatingHeart());
+      }
+
+      for (let i = 0; i < 20; i++) {
+        glowDust.push({
+          x: Math.random() * cosmosCanvas.width,
+          y: Math.random() * cosmosCanvas.height,
+          vx: (Math.random() - 0.5) * 0.28,
+          vy: -(Math.random() * 0.36 + 0.1),
+          radius: Math.random() * 2.2 + 1,
+          hue: Math.random() > 0.4 ? 345 : 42,
+          alpha: Math.random() * 0.45 + 0.15
+        });
+      }
+    }
+
+    function createFloatingHeart(startBottom = false) {
+      return {
+        x: Math.random() * cosmosCanvas.width,
+        y: startBottom ? cosmosCanvas.height + 20 : Math.random() * cosmosCanvas.height,
+        size: Math.random() * 12 + 8,
+        speedY: Math.random() * 0.5 + 0.2,
+        swayAmp: Math.random() * 0.45 + 0.18,
+        swayFreq: Math.random() * 0.018 + 0.008,
+        angle: Math.random() * Math.PI * 2,
+        opacity: Math.random() * 0.3 + 0.12,
+        color: Math.random() > 0.3 ? 'rgba(244, 63, 94,' : 'rgba(251, 191, 36,'
+      };
+    }
+
+    function drawHeartPath(ctx, x, y, size) {
+      ctx.beginPath();
+      const topCurveHeight = size * 0.3;
+      ctx.moveTo(x, y + topCurveHeight);
+      ctx.bezierCurveTo(x, y, x - size / 2, y, x - size / 2, y + topCurveHeight);
+      ctx.bezierCurveTo(x - size / 2, y + (size + topCurveHeight) / 2, x, y + (size + topCurveHeight) / 1.4, x, y + size);
+      ctx.bezierCurveTo(x, y + (size + topCurveHeight) / 1.4, x + size / 2, y + (size + topCurveHeight) / 2, x + size / 2, y + topCurveHeight);
+      ctx.bezierCurveTo(x + size / 2, y, x, y, x, y + topCurveHeight);
+      ctx.closePath();
+    }
+
+    function animateCosmos() {
+      if (currentStage !== 3) {
+        cosmosCtx.clearRect(0, 0, cosmosCanvas.width, cosmosCanvas.height);
+
+        const starBoost = isFinal60Active ? 1.45 : 1.0;
+        const speedBoost = isFinal60Active ? 1.85 : 1.0;
+
+        for (let i = 0; i < stars.length; i++) {
+          const s = stars[i];
+          s.alpha += s.twinkleSpeed;
+          if (s.alpha > 1 || s.alpha < 0.2) s.twinkleSpeed *= -1;
+          s.y += s.driftY * speedBoost;
+          if (s.y < 0) {
+            s.y = cosmosCanvas.height;
+            s.x = Math.random() * cosmosCanvas.width;
+          }
+
+          cosmosCtx.beginPath();
+          cosmosCtx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+          cosmosCtx.fillStyle = `rgba(255, 245, 250, ${Math.min(1, Math.abs(s.alpha) * starBoost)})`;
+          cosmosCtx.fill();
+        }
+
+        for (let i = 0; i < glowDust.length; i++) {
+          const p = glowDust[i];
+          p.x += p.vx * speedBoost;
+          p.y += p.vy * speedBoost;
+          if (p.y < -10) {
+            p.y = cosmosCanvas.height + 10;
+            p.x = Math.random() * cosmosCanvas.width;
+          }
+          cosmosCtx.beginPath();
+          cosmosCtx.arc(p.x, p.y, p.radius * 2.1, 0, Math.PI * 2);
+          cosmosCtx.fillStyle = `hsla(${p.hue}, 90%, 70%, ${p.alpha * 0.22})`;
+          cosmosCtx.fill();
+
+          cosmosCtx.beginPath();
+          cosmosCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          cosmosCtx.fillStyle = `hsla(${p.hue}, 90%, 78%, ${p.alpha * starBoost})`;
+          cosmosCtx.fill();
+        }
+
+        for (let i = 0; i < floatingHearts.length; i++) {
+          const h = floatingHearts[i];
+          h.y -= h.speedY * speedBoost;
+          h.angle += h.swayFreq;
+          h.x += Math.sin(h.angle) * h.swayAmp;
+
+          if (h.y < -30) {
+            Object.assign(h, createFloatingHeart(true));
+          }
+
+          drawHeartPath(cosmosCtx, h.x, h.y, h.size);
+          cosmosCtx.fillStyle = `${h.color} ${Math.min(0.8, h.opacity * starBoost)})`;
+          cosmosCtx.fill();
+        }
+      }
+
+      requestAnimationFrame(animateCosmos);
+    }
+
+    /*************************************************************
+     * 5. STAGE 1: PASSWORD GATE & WELCOME SEQUENCE
+     *************************************************************/
+    function handlePasswordSubmit(event) {
+      if (event) event.preventDefault();
+      initAudioContext();
+
+      const inputEl = document.getElementById('nickname-input');
+      const rawVal = (inputEl.value || '').trim().toLowerCase();
+
+      const isMatch = appConfig.nicknames.some(
+        nick => nick.trim().toLowerCase() === rawVal
+      );
+
+      if (!isMatch || !rawVal) {
+        const errorText = document.getElementById('password-error-text');
+        const card = document.getElementById('password-card');
+
+        errorText.textContent = WRONG_MESSAGES[wrongPasswordIndex % WRONG_MESSAGES.length];
+        wrongPasswordIndex++;
+        errorText.classList.remove('opacity-0');
+        errorText.classList.add('opacity-100');
+
+        card.classList.remove('shake-error');
+        void card.offsetWidth;
+        card.classList.add('shake-error');
+        return;
+      }
+
+      if (!isMusicPlaying && !isConfessionPlaying) toggleBackgroundMusic(true);
+      playMagicalChime();
+
+      const nowMs = Date.now();
+      const isAlreadyUnlocked = safeGetStorage(STORAGE_KEY_UNLOCKED) === 'true';
+
+      if (isAlreadyUnlocked && nowMs >= TARGET_TIMESTAMP_MS) {
+        goToStage(4);
+      } else {
+        runCorrectPasswordSequence();
+      }
+    }
+
+    async function runCorrectPasswordSequence() {
+      welcomeSequenceAborted = false;
+      const passwordCard = document.getElementById('password-card');
+      const welcomeBox = document.getElementById('welcome-sequence-box');
+      const welcomeText = document.getElementById('welcome-seq-text');
+
+      passwordCard.classList.add('hidden');
+      welcomeBox.classList.remove('hidden');
+      welcomeBox.classList.add('flex');
+
+      const lines = [
+        "Hi, beautiful ❤️",
+        "I've been waiting for you.",
+        "I made something special for you...",
+        "But some beautiful surprises deserve a little patience."
+      ];
+
+      for (let i = 0; i < lines.length; i++) {
+        if (welcomeSequenceAborted) return;
+        welcomeText.textContent = lines[i];
+        welcomeText.classList.remove('opacity-0', 'translate-y-2');
+        welcomeText.classList.add('opacity-100', 'translate-y-0');
+        playHeartbeatSound(0.6);
+
+        await sleep(1950);
+        if (welcomeSequenceAborted) return;
+
+        welcomeText.classList.remove('opacity-100', 'translate-y-0');
+        welcomeText.classList.add('opacity-0', 'translate-y-2');
+        await sleep(500);
+      }
+
+      if (!welcomeSequenceAborted) {
+        goToStage(1.5);
+      }
+    }
+
+    /*************************************************************
+     * 5B. STAGE 1.5: ROMANTIC PHOTO PUZZLE GAME ENGINE
+     *************************************************************/
+    const PUZZLE_GRID_SIZE = 3;
+    let puzzleTilesOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    let puzzleTileSlices = [];
+    let selectedTileSlot = null;
+    let puzzleMoves = 0;
+    let isPuzzleSolved = false;
+    let puzzlePhotoIndex = 0;
+    let activePuzzleImageUrl = '';
+
+    function drawRomanticArtworkCanvas(photoObj, idx = 0) {
+      const c = document.createElement('canvas');
+      c.width = 660;
+      c.height = 660;
+      const ctx = c.getContext('2d');
+
+      const palettes = [
+        ['#180424', '#4a0d36', '#7a1644', '#1d051a'],
+        ['#120826', '#33124d', '#6e1848', '#15041f'],
+        ['#1f091d', '#541232', '#872341', '#1a0617']
+      ];
+      const pal = palettes[idx % palettes.length];
+
+      const skyGrad = ctx.createLinearGradient(0, 0, 660, 660);
+      skyGrad.addColorStop(0, pal[0]);
+      skyGrad.addColorStop(0.45, pal[1]);
+      skyGrad.addColorStop(0.8, pal[2]);
+      skyGrad.addColorStop(1, pal[3]);
+      ctx.fillStyle = skyGrad;
+      ctx.fillRect(0, 0, 660, 660);
+
+      const moonGrad = ctx.createRadialGradient(330, 265, 16, 330, 265, 240);
+      moonGrad.addColorStop(0, 'rgba(255, 241, 242, 0.9)');
+      moonGrad.addColorStop(0.3, 'rgba(253, 164, 175, 0.55)');
+      moonGrad.addColorStop(0.65, 'rgba(244, 63, 94, 0.2)');
+      moonGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = moonGrad;
+      ctx.fillRect(0, 0, 660, 660);
+
+      for (let i = 0; i < 45; i++) {
+        const sx = (i * 137.5) % 630 + 15;
+        const sy = (i * 89.3) % 450 + 20;
+        const sr = (i % 3) + 1;
+        ctx.beginPath();
+        ctx.arc(sx, sy, sr, 0, Math.PI * 2);
+        ctx.fillStyle = i % 3 === 0 ? 'rgba(253, 230, 138, 0.85)' : 'rgba(255, 255, 255, 0.7)';
+        ctx.fill();
+      }
+
+      ctx.strokeStyle = 'rgba(253, 230, 138, 0.32)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(330, 265, 145, 0, Math.PI * 2);
+      ctx.stroke();
+
+      drawHeartPath(ctx, 330, 205, 105);
+      const heartGrad = ctx.createLinearGradient(275, 205, 385, 325);
+      heartGrad.addColorStop(0, '#fb7185');
+      heartGrad.addColorStop(0.5, '#e11d48');
+      heartGrad.addColorStop(1, '#f59e0b');
+      ctx.fillStyle = heartGrad;
+      ctx.fill();
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#fde68a';
+      ctx.font = '600 17px Georgia, serif';
+      ctx.fillText((photoObj && photoObj.tag ? photoObj.tag : 'JUNE 29, 2026 • 2:28 AM').toUpperCase(), 330, 88);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'italic 600 31px Georgia, serif';
+      ctx.fillText(photoObj ? photoObj.title : 'Where My Heart Found Home', 330, 435);
+
+      ctx.fillStyle = '#fecdd3';
+      ctx.font = '400 18px sans-serif';
+      ctx.fillText('Our 4 Months Story ❤️', 330, 478);
+
+      return c;
+    }
+
+    function sliceSourceCanvasInto9Tiles(sourceCanvas) {
+      const tileW = Math.floor(sourceCanvas.width / PUZZLE_GRID_SIZE);
+      const tileH = Math.floor(sourceCanvas.height / PUZZLE_GRID_SIZE);
+      const slices = [];
+
+      for (let pieceId = 0; pieceId < 9; pieceId++) {
+        const row = Math.floor(pieceId / PUZZLE_GRID_SIZE);
+        const col = pieceId % PUZZLE_GRID_SIZE;
+        const tc = document.createElement('canvas');
+        tc.width = 200;
+        tc.height = 200;
+        const tctx = tc.getContext('2d');
+        tctx.drawImage(
+          sourceCanvas,
+          col * tileW, row * tileH, tileW, tileH,
+          0, 0, 200, 200
+        );
+        slices.push(tc.toDataURL('image/jpeg', 0.86));
+      }
+      return slices;
+    }
+
+    function sliceLoadedImageInto9Tiles(imgElement) {
+      try {
+        const squareCanvas = document.createElement('canvas');
+        squareCanvas.width = 600;
+        squareCanvas.height = 600;
+        const sctx = squareCanvas.getContext('2d');
+
+        const iw = imgElement.naturalWidth || imgElement.width || 600;
+        const ih = imgElement.naturalHeight || imgElement.height || 600;
+        const side = Math.min(iw, ih);
+        const sx = (iw - side) / 2;
+        const sy = (ih - side) / 2;
+
+        sctx.drawImage(imgElement, sx, sy, side, side, 0, 0, 600, 600);
+        activePuzzleImageUrl = squareCanvas.toDataURL('image/jpeg', 0.88);
+        puzzleTileSlices = sliceSourceCanvasInto9Tiles(squareCanvas);
+        applyPuzzleImageAndRender();
+      } catch (e) {}
+    }
+
+    function resolvePuzzleImageSource() {
+      const chosen = CURATED_PHOTOS[puzzlePhotoIndex % CURATED_PHOTOS.length];
+      const captionEl = document.getElementById('puzzle-photo-caption');
+      if (captionEl && chosen) {
+        captionEl.textContent = `"${chosen.caption}"`;
+      }
+
+      const fallbackCanvas = drawRomanticArtworkCanvas(chosen, puzzlePhotoIndex);
+      activePuzzleImageUrl = fallbackCanvas.toDataURL('image/jpeg', 0.88);
+      puzzleTileSlices = sliceSourceCanvasInto9Tiles(fallbackCanvas);
+      applyPuzzleImageAndRender();
+
+      const base = chosen.file.split('/').pop();
+      const blobUrl = mediaBlobUrlMap[chosen.file] || mediaBlobUrlMap[base];
+      if (blobUrl || localRepoMediaAvailable) {
+        const candidateUrl = blobUrl || encodeURI(chosen.file);
+        const probeImg = new Image();
+        probeImg.onload = () => {
+          if (probeImg.naturalWidth > 0) sliceLoadedImageInto9Tiles(probeImg);
+        };
+        probeImg.src = candidateUrl;
+      }
+    }
+
+    function initPuzzleStage() {
+      isPuzzleSolved = false;
+      puzzleMoves = 0;
+      selectedTileSlot = null;
+
+      document.getElementById('puzzle-moves-count').textContent = '0';
+      document.getElementById('puzzle-unlock-cta').classList.add('hidden');
+      document.getElementById('puzzle-full-reveal').classList.add('hidden');
+      document.getElementById('puzzle-full-reveal').classList.remove('flex');
+      document.getElementById('puzzle-solved-caption-overlay').classList.add('hidden');
+      document.getElementById('puzzle-subtitle-text').textContent =
+        'Tap any two tiles to swap them and complete our photo to unlock the Countdown Universe.';
+
+      puzzleTilesOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+      const swapPairs = [[0, 4], [2, 5]];
+      swapPairs.forEach(([a, b]) => {
+        const tmp = puzzleTilesOrder[a];
+        puzzleTilesOrder[a] = puzzleTilesOrder[b];
+        puzzleTilesOrder[b] = tmp;
+      });
+
+      resolvePuzzleImageSource();
+    }
+
+    function applyPuzzleImageAndRender() {
+      const revealImg = document.getElementById('puzzle-reveal-img');
+      if (revealImg) revealImg.src = activePuzzleImageUrl;
+      renderPuzzleBoard();
+    }
+
+    function renderPuzzleBoard() {
+      const grid = document.getElementById('puzzle-grid');
+      if (!grid) return;
+
+      let correctCount = 0;
+      puzzleTilesOrder.forEach((pieceId, slotIdx) => {
+        if (pieceId === slotIdx) correctCount++;
+      });
+
+      const matchCountEl = document.getElementById('puzzle-matched-count');
+      if (matchCountEl) matchCountEl.textContent = `${correctCount}/9`;
+
+      grid.innerHTML = puzzleTilesOrder.map((pieceId, slotIdx) => {
+        const isSelected = selectedTileSlot === slotIdx;
+        const isCorrect = pieceId === slotIdx;
+        const tileSrc = puzzleTileSlices[pieceId] || '';
+
+        return `
+          <div
+            onclick="handlePuzzleTileTap(${slotIdx})"
+            class="puzzle-tile ${isSelected ? 'tile-selected' : ''} ${isCorrect ? 'tile-correct' : ''}">
+            <img src="${tileSrc}" alt="Tile ${pieceId + 1}" class="w-full h-full object-cover pointer-events-none block" />
+            <span class="absolute top-1.5 left-1.5 w-5 h-5 rounded-full text-[10px] font-semibold flex items-center justify-center ${
+              isCorrect
+                ? 'bg-amber-400/90 text-black shadow-sm'
+                : 'bg-black/65 text-rose-100 border border-white/20'
+            }">
+              ${isCorrect ? '✓' : pieceId + 1}
+            </span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function handlePuzzleTileTap(slotIdx) {
+      if (isPuzzleSolved) return;
+      initAudioContext();
+
+      if (selectedTileSlot === null) {
+        selectedTileSlot = slotIdx;
+        playRomanticMelodyNote(523.25, 0.35, true);
+        renderPuzzleBoard();
+        return;
+      }
+
+      if (selectedTileSlot === slotIdx) {
+        selectedTileSlot = null;
+        renderPuzzleBoard();
+        return;
+      }
+
+      swapPuzzleSlots(selectedTileSlot, slotIdx);
+      selectedTileSlot = null;
+    }
+
+    function swapPuzzleSlots(slotA, slotB) {
+      const temp = puzzleTilesOrder[slotA];
+      puzzleTilesOrder[slotA] = puzzleTilesOrder[slotB];
+      puzzleTilesOrder[slotB] = temp;
+
+      puzzleMoves++;
+      const movesEl = document.getElementById('puzzle-moves-count');
+      if (movesEl) movesEl.textContent = String(puzzleMoves);
+
+      playRomanticMelodyNote(659.25, 0.5, true);
+      renderPuzzleBoard();
+      checkIfPuzzleCompleted();
+    }
+
+    function checkIfPuzzleCompleted() {
+      const allCorrect = puzzleTilesOrder.every((pieceId, idx) => pieceId === idx);
+      if (!allCorrect) return;
+
+      isPuzzleSolved = true;
+      playMagicalChime();
+      triggerScreenPulse();
+
+      const fullReveal = document.getElementById('puzzle-full-reveal');
+      const captionOverlay = document.getElementById('puzzle-solved-caption-overlay');
+      const unlockCta = document.getElementById('puzzle-unlock-cta');
+      const subtitleText = document.getElementById('puzzle-subtitle-text');
+
+      if (fullReveal) {
+        fullReveal.classList.remove('hidden');
+        fullReveal.classList.add('flex');
+      }
+      if (captionOverlay) captionOverlay.classList.remove('hidden');
+      if (unlockCta) unlockCta.classList.remove('hidden');
+      if (subtitleText) {
+        subtitleText.textContent = 'You completed our memory ❤️ The Countdown Universe is now unlocked!';
+      }
+    }
+
+    function givePuzzleMagicHint() {
+      if (isPuzzleSolved) return;
+      initAudioContext();
+      for (let i = 0; i < puzzleTilesOrder.length; i++) {
+        if (puzzleTilesOrder[i] !== i) {
+          const correctPieceCurrentSlot = puzzleTilesOrder.indexOf(i);
+          swapPuzzleSlots(i, correctPieceCurrentSlot);
+          break;
+        }
+      }
+    }
+
+    function cyclePuzzlePhotoChoice() {
+      puzzlePhotoIndex = (puzzlePhotoIndex + 1) % CURATED_PHOTOS.length;
+      resolvePuzzleImageSource();
+    }
+
+    function pulsePuzzlePeek() {
+      if (isPuzzleSolved) return;
+      const fullReveal = document.getElementById('puzzle-full-reveal');
+      if (!fullReveal) return;
+      fullReveal.classList.remove('hidden');
+      fullReveal.classList.add('flex');
+      setTimeout(() => {
+        if (!isPuzzleSolved) {
+          fullReveal.classList.add('hidden');
+          fullReveal.classList.remove('flex');
+        }
+      }, 1100);
+    }
+
+    function proceedFromPuzzleToStage2() {
+      playMagicalChime();
+      goToStage(2);
+    }
+
+    /*************************************************************
+     * 6. STAGE 2: THE COUNTDOWN UNIVERSE
+     *************************************************************/
+    let countdownInterval = null;
+    let quoteRotationInterval = null;
+    let togetherInterval = null;
+    let simulatedTargetMs = null;
+    let lastDisplayedSecond = null;
+    let isFinal60Active = false;
+    let isFinal10Active = false;
+
+    function startStage2Countdown() {
+      if (countdownInterval) clearInterval(countdownInterval);
+      if (quoteRotationInterval) clearInterval(quoteRotationInterval);
+
+      const quoteEl = document.getElementById('rotating-quote');
+      quoteRotationInterval = setInterval(() => {
+        quoteEl.classList.add('opacity-0');
+        setTimeout(() => {
+          currentQuoteIndex = (currentQuoteIndex + 1) % ROTATING_COUNTDOWN_QUOTES.length;
+          quoteEl.textContent = `"${ROTATING_COUNTDOWN_QUOTES[currentQuoteIndex]}"`;
+          quoteEl.classList.remove('opacity-0');
+        }, 350);
+      }, 4200);
+
+      updateCountdownTick();
+      countdownInterval = setInterval(updateCountdownTick, 250);
+    }
+
+    function setCountdownSimulation(mode) {
+      initAudioContext();
+      if (!isMusicPlaying && !isConfessionPlaying) toggleBackgroundMusic(true);
+      lastDisplayedSecond = null;
+
+      if (mode === 'live') {
+        simulatedTargetMs = null;
+        resetFinalPhaseStyles();
+      } else if (typeof mode === 'number') {
+        simulatedTargetMs = Date.now() + mode * 1000 + 300;
+        resetFinalPhaseStyles();
+      }
+      updateCountdownTick();
+    }
+
+    function resetFinalPhaseStyles() {
+      isFinal60Active = false;
+      isFinal10Active = false;
+      document.getElementById('final-phase-text').classList.add('opacity-0');
+      document.getElementById('standard-timer-grid').classList.remove('hidden');
+      document.getElementById('final-10-stage').classList.add('hidden');
+      document.getElementById('final-10-stage').classList.remove('flex');
+    }
+
+    function triggerScreenPulse() {
+      const overlay = document.getElementById('screen-pulse-overlay');
+      overlay.classList.remove('screen-pulse-active');
+      void overlay.offsetWidth;
+      overlay.classList.add('screen-pulse-active');
+    }
+
+    function updateCountdownTick() {
+      const activeTarget = simulatedTargetMs !== null ? simulatedTargetMs : TARGET_TIMESTAMP_MS;
+      const now = Date.now();
+      const diffMs = activeTarget - now;
+
+      if (diffMs <= 0) {
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+        triggerStage3UnlockSequence();
+        return;
+      }
+
+      const totalSecondsLeft = Math.ceil(diffMs / 1000);
+      const totalSecFloor = Math.floor(diffMs / 1000);
+      const months = Math.floor(totalSecFloor / (30 * 86400));
+      const remAfterMonths = totalSecFloor % (30 * 86400);
+      const days = Math.floor(remAfterMonths / 86400);
+      const remAfterDays = remAfterMonths % 86400;
+      const hours = Math.floor(remAfterDays / 3600);
+      const remAfterHours = remAfterDays % 3600;
+      const minutes = Math.floor(remAfterHours / 60);
+      const seconds = remAfterHours % 60;
+
+      document.getElementById('cd-months').textContent = String(months).padStart(2, '0');
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+
+      const bannerText = document.getElementById('final-phase-text');
+
+      if (totalSecondsLeft <= 60 && totalSecondsLeft > 10) {
+        if (!isFinal60Active) {
+          isFinal60Active = true;
+          isFinal10Active = false;
+        }
+        bannerText.textContent = "The wait is almost over...";
+        bannerText.classList.remove('opacity-0');
+        document.getElementById('standard-timer-grid').classList.remove('hidden');
+        document.getElementById('final-10-stage').classList.add('hidden');
+        document.getElementById('final-10-stage').classList.remove('flex');
+      }
+
+      if (totalSecondsLeft <= 10 && totalSecondsLeft >= 1) {
+        isFinal60Active = true;
+        isFinal10Active = true;
+
+        bannerText.textContent = "Your surprise is about to begin...";
+        bannerText.classList.remove('opacity-0');
+
+        document.getElementById('standard-timer-grid').classList.add('hidden');
+        const final10Stage = document.getElementById('final-10-stage');
+        final10Stage.classList.remove('hidden');
+        final10Stage.classList.add('flex');
+
+        if (lastDisplayedSecond !== totalSecondsLeft) {
+          lastDisplayedSecond = totalSecondsLeft;
+          const numBox = document.getElementById('final-10-number-box');
+          numBox.textContent = totalSecondsLeft;
+
+          numBox.classList.remove('final-ten-number');
+          void numBox.offsetWidth;
+          numBox.classList.add('final-ten-number');
+
+          playHeartbeatSound(1.1);
+          triggerScreenPulse();
+        }
+      }
+    }
+
+    /*************************************************************
+     * 7. STAGE 3: SMOOTH 60FPS CINEMATIC UNLOCK SEQUENCE
+     *************************************************************/
+    let cinematicCanvas, cinematicCtx;
+    let explosionParticles = [];
+    let soulTrails = [];
+    let orbitProgress = 0;
+    let warpSpeedMultiplier = 1;
+    let flashOpacity = 0;
+    let cinematicAnimId = null;
+    let cinematicPhase = 'idle';
+
+    function finishStage3Immediately() {
+      stage3Aborted = true;
+      safeSetStorage(STORAGE_KEY_UNLOCKED, 'true');
+      if (cinematicAnimId) {
+        cancelAnimationFrame(cinematicAnimId);
+        cinematicAnimId = null;
+      }
+      goToStage(4);
+    }
+
+    async function showCinematicLine(element, text, holdMs = 1900) {
+      if (stage3Aborted) return;
+      element.textContent = text;
+      element.classList.remove('cinematic-text-hidden');
+      element.classList.add('cinematic-text-visible');
+      await sleep(holdMs);
+      if (stage3Aborted) return;
+      element.classList.remove('cinematic-text-visible');
+      element.classList.add('cinematic-text-hidden');
+      await sleep(650);
+    }
+
+    async function triggerStage3UnlockSequence() {
+      stage3Aborted = false;
+      initAudioContext();
+      if (!isMusicPlaying && !isConfessionPlaying) toggleBackgroundMusic(true);
+
+      if (countdownInterval) {
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+      }
+      if (quoteRotationInterval) {
+        clearInterval(quoteRotationInterval);
+        quoteRotationInterval = null;
+      }
+
+      currentStage = 3;
+
+      document.getElementById('stage-1-gate').classList.add('hidden');
+      document.getElementById('stage-puzzle-gate').classList.add('hidden');
+      document.getElementById('stage-2-countdown').classList.add('hidden');
+      document.getElementById('main-anniversary-site').classList.add('hidden');
+
+      const stage3 = document.getElementById('stage-3-cinematic');
+      const heartContainer = document.getElementById('cinematic-heart-container');
+      const singleHeart = document.getElementById('cinematic-single-heart');
+      const heartGlyph = document.getElementById('cinematic-heart-glyph');
+      const monologue = document.getElementById('cinematic-monologue');
+      const embraceWrapper = document.getElementById('celestial-embrace-wrapper');
+      const coreHalo = document.getElementById('celestial-core-halo');
+      const welcomeSub = document.getElementById('door-welcome-sub');
+      const doorWelcomeText = document.getElementById('door-welcome-text');
+      const goldenFlood = document.getElementById('golden-light-flood');
+
+      stage3.classList.remove('hidden');
+      stage3.classList.add('flex');
+      heartContainer.classList.remove('hidden');
+      singleHeart.classList.add('opacity-0');
+      singleHeart.classList.remove('opacity-100', 'scale-150');
+      monologue.classList.add('cinematic-text-hidden');
+      monologue.classList.remove('cinematic-text-visible');
+      embraceWrapper.classList.add('hidden');
+      embraceWrapper.classList.remove('flex');
+      coreHalo.classList.add('opacity-0', 'scale-75');
+      coreHalo.classList.remove('opacity-100', 'scale-100');
+      welcomeSub.classList.add('cinematic-text-hidden');
+      welcomeSub.classList.remove('cinematic-text-visible');
+      doorWelcomeText.classList.add('cinematic-text-hidden');
+      doorWelcomeText.classList.remove('cinematic-text-visible');
+      goldenFlood.classList.add('opacity-0');
+      goldenFlood.classList.remove('opacity-100');
+
+      setupCinematicCanvas();
+
+      await sleep(800);
+      if (stage3Aborted) return;
+
+      singleHeart.classList.remove('opacity-0');
+      singleHeart.classList.add('opacity-100');
+
+      for (let b = 0; b < 3; b++) {
+        if (stage3Aborted) return;
+        heartGlyph.classList.remove('animate-heart-dramatic');
+        void heartGlyph.offsetWidth;
+        heartGlyph.classList.add('animate-heart-dramatic');
+        playHeartbeatSound(1.1);
+        triggerScreenPulse();
+        await sleep(950);
+      }
+
+      const cinematicLines = [
+        "4 months.",
+        "Countless memories.",
+        "Thousands of smiles.",
+        "And one person who changed everything."
+      ];
+
+      for (let line of cinematicLines) {
+        if (stage3Aborted) return;
+        playHeartbeatSound(0.7);
+        await showCinematicLine(monologue, line, 1800);
+      }
+
+      if (stage3Aborted) return;
+      singleHeart.classList.add('opacity-0', 'scale-150');
+      playMagicalChime();
+      startCinematicParticleExplosion();
+      await sleep(1500);
+
+      if (stage3Aborted) return;
+      cinematicPhase = 'souls_orbit';
+      orbitProgress = 0;
+      playEmotionalSwell();
+      await sleep(2400);
+
+      if (stage3Aborted) return;
+      cinematicPhase = 'starlight_flight';
+      flashOpacity = 0.8;
+      playMagicalChime();
+
+      heartContainer.classList.add('hidden');
+      embraceWrapper.classList.remove('hidden');
+      embraceWrapper.classList.add('flex');
+
+      setTimeout(() => {
+        coreHalo.classList.remove('opacity-0', 'scale-75');
+        coreHalo.classList.add('opacity-100', 'scale-100');
+        welcomeSub.classList.remove('cinematic-text-hidden');
+        welcomeSub.classList.add('cinematic-text-visible');
+      }, 150);
+
+      await sleep(600);
+
+      const finalLines = [
+        "Out of billions of souls in this universe, my heart found yours.",
+        "Welcome, My Love ❤️",
+        "Happy Anniversary.",
+        "This entire universe was made for you."
+      ];
+
+      for (let i = 0; i < finalLines.length; i++) {
+        if (stage3Aborted) return;
+        if (i === 1) playHeartbeatSound(0.75);
+        await showCinematicLine(doorWelcomeText, finalLines[i], 1900);
+      }
+
+      if (stage3Aborted) return;
+      warpSpeedMultiplier = 4.5;
+      coreHalo.classList.add('scale-150', 'opacity-0');
+      goldenFlood.classList.remove('opacity-0');
+      goldenFlood.classList.add('opacity-100');
+      playEmotionalSwell();
+      await sleep(1500);
+
+      finishStage3Immediately();
+
+      setTimeout(() => {
+        goldenFlood.classList.remove('opacity-100');
+        goldenFlood.classList.add('opacity-0');
+      }, 300);
+    }
+
+    function setupCinematicCanvas() {
+      cinematicCanvas = document.getElementById('cinematic-canvas');
+      cinematicCtx = cinematicCanvas.getContext('2d');
+      cinematicCanvas.width = window.innerWidth || 1024;
+      cinematicCanvas.height = window.innerHeight || 768;
+      explosionParticles = [];
+      soulTrails = [];
+      orbitProgress = 0;
+      warpSpeedMultiplier = 1;
+      flashOpacity = 0;
+      cinematicPhase = 'idle';
+    }
+
+    function startCinematicParticleExplosion() {
+      const w = cinematicCanvas.width;
+      const h = cinematicCanvas.height;
+      const cx = w / 2;
+      const cy = h / 2;
+      explosionParticles = [];
+      soulTrails = [];
+      cinematicPhase = 'explode';
+
+      for (let i = 0; i < 160; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.pow(Math.random(), 0.7) * 7 + 0.6;
+
+        explosionParticles.push({
+          x: cx,
+          y: cy,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          size: Math.random() * 2.4 + 0.8,
+          hue: Math.random() > 0.4 ? 345 : 38,
+          alpha: Math.random() * 0.65 + 0.35
+        });
+      }
+
+      function renderCinematicParticles() {
+        if (stage3Aborted) return;
+        const width = cinematicCanvas.width;
+        const height = cinematicCanvas.height;
+        const centerX = width / 2;
+        const centerY = height / 2;
+
+        cinematicCtx.fillStyle = 'rgba(3, 1, 6, 0.25)';
+        cinematicCtx.fillRect(0, 0, width, height);
+
+        for (let i = 0; i < explosionParticles.length; i++) {
+          const p = explosionParticles[i];
+          if (cinematicPhase === 'explode' || cinematicPhase === 'souls_orbit') {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vx *= 0.968;
+            p.vy *= 0.968;
+            p.y -= 0.14;
+          } else if (cinematicPhase === 'starlight_flight') {
+            const dx = p.x - centerX;
+            const dy = p.y - centerY;
+            const dist = Math.hypot(dx, dy) + 1;
+            const pull = (dist * 0.018 + 0.9) * warpSpeedMultiplier;
+            p.x += (dx / dist) * pull;
+            p.y += (dy / dist) * pull;
+            p.size = Math.min(3.8, p.size + 0.012 * warpSpeedMultiplier);
+
+            if (p.x < -30 || p.x > width + 30 || p.y < -30 || p.y > height + 30) {
+              const respawnAngle = Math.random() * Math.PI * 2;
+              const respawnRadius = Math.random() * 40 + 6;
+              p.x = centerX + Math.cos(respawnAngle) * respawnRadius;
+              p.y = centerY + Math.sin(respawnAngle) * respawnRadius;
+              p.size = Math.random() * 1.3 + 0.6;
+            }
+          }
+
+          cinematicCtx.beginPath();
+          cinematicCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          cinematicCtx.fillStyle = `hsla(${p.hue}, 92%, 78%, ${p.alpha})`;
+          cinematicCtx.fill();
+        }
+
+        if (cinematicPhase === 'souls_orbit') {
+          orbitProgress = Math.min(1, orbitProgress + 0.0075);
+          const ease = 1 - Math.pow(1 - orbitProgress, 2.3);
+          const maxRadius = Math.min(width, height) * 0.32;
+          const currentRadius = maxRadius * (1 - ease);
+          const theta = ease * Math.PI * 3.4;
+
+          const soul1 = {
+            x: centerX + Math.cos(theta) * currentRadius,
+            y: centerY + Math.sin(theta) * currentRadius * 0.72,
+            hue: 346
+          };
+          const soul2 = {
+            x: centerX + Math.cos(theta + Math.PI) * currentRadius,
+            y: centerY + Math.sin(theta + Math.PI) * currentRadius * 0.72,
+            hue: 42
+          };
+
+          [soul1, soul2].forEach(s => {
+            for (let k = 0; k < 2; k++) {
+              soulTrails.push({
+                x: s.x + (Math.random() - 0.5) * 5,
+                y: s.y + (Math.random() - 0.5) * 5,
+                vx: (Math.random() - 0.5) * 0.6,
+                vy: (Math.random() - 0.5) * 0.6,
+                radius: Math.random() * 2.8 + 1.2,
+                hue: s.hue,
+                alpha: 0.9
+              });
+            }
+
+            cinematicCtx.beginPath();
+            cinematicCtx.arc(s.x, s.y, 14, 0, Math.PI * 2);
+            cinematicCtx.fillStyle = `hsla(${s.hue}, 100%, 75%, 0.3)`;
+            cinematicCtx.fill();
+
+            cinematicCtx.beginPath();
+            cinematicCtx.arc(s.x, s.y, 6, 0, Math.PI * 2);
+            cinematicCtx.fillStyle = '#ffffff';
+            cinematicCtx.fill();
+          });
+        }
+
+        for (let i = soulTrails.length - 1; i >= 0; i--) {
+          const st = soulTrails[i];
+          st.x += st.vx;
+          st.y += st.vy;
+          st.alpha -= 0.025;
+          st.radius *= 0.985;
+          if (st.alpha <= 0.02) {
+            soulTrails.splice(i, 1);
+            continue;
+          }
+          cinematicCtx.beginPath();
+          cinematicCtx.arc(st.x, st.y, st.radius, 0, Math.PI * 2);
+          cinematicCtx.fillStyle = `hsla(${st.hue}, 95%, 76%, ${st.alpha})`;
+          cinematicCtx.fill();
+        }
+
+        if (flashOpacity > 0.005) {
+          const grad = cinematicCtx.createRadialGradient(
+            centerX, centerY, 5,
+            centerX, centerY, Math.max(width, height) * 0.7
+          );
+          grad.addColorStop(0, `rgba(255, 245, 248, ${flashOpacity})`);
+          grad.addColorStop(0.35, `rgba(251, 113, 133, ${flashOpacity * 0.5})`);
+          grad.addColorStop(1, 'rgba(3, 1, 6, 0)');
+
+          cinematicCtx.fillStyle = grad;
+          cinematicCtx.fillRect(0, 0, width, height);
+          flashOpacity *= 0.93;
+        }
+
+        cinematicAnimId = requestAnimationFrame(renderCinematicParticles);
+      }
+
+      renderCinematicParticles();
+    }
+
+    /*************************************************************
+     * 8. STAGE NAVIGATION & CRASH-PROOF GALLERY
+     *************************************************************/
+    function goToStage(stageNum) {
+      welcomeSequenceAborted = true;
+      stage3Aborted = true;
+      currentStage = stageNum;
+
+      const s1 = document.getElementById('stage-1-gate');
+      const sPuzzle = document.getElementById('stage-puzzle-gate');
+      const s2 = document.getElementById('stage-2-countdown');
+      const s3 = document.getElementById('stage-3-cinematic');
+      const s4 = document.getElementById('main-anniversary-site');
+
+      s1.classList.add('hidden');
+      if (sPuzzle) {
+        sPuzzle.classList.add('hidden');
+        sPuzzle.classList.remove('flex');
+      }
+      s2.classList.add('hidden');
+      s2.classList.remove('flex');
+      s3.classList.add('hidden');
+      s3.classList.remove('flex');
+      s4.classList.add('hidden');
+
+      if (stageNum === 1) {
+        const pwCard = document.getElementById('password-card');
+        const welcomeBox = document.getElementById('welcome-sequence-box');
+        pwCard.classList.remove('hidden');
+        welcomeBox.classList.add('hidden');
+        welcomeBox.classList.remove('flex');
+        document.getElementById('nickname-input').value = '';
+        s1.classList.remove('hidden');
+      } else if (stageNum === 1.5 || stageNum === 'puzzle') {
+        if (sPuzzle) {
+          sPuzzle.classList.remove('hidden');
+          sPuzzle.classList.add('flex');
+          initPuzzleStage();
+        }
+      } else if (stageNum === 2) {
+        s2.classList.remove('hidden');
+        s2.classList.add('flex');
+        startStage2Countdown();
+      } else if (stageNum === 4) {
+        s4.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        startTimeTogetherCounter();
+        if (!isMusicPlaying && !isConfessionPlaying) toggleBackgroundMusic(true);
+      }
+    }
+
+    function replayStage3Cinematic() {
+      initAudioContext();
+      triggerStage3UnlockSequence();
+    }
+
+    function startTimeTogetherCounter() {
+      if (togetherInterval) clearInterval(togetherInterval);
+
+      function updateTogether() {
+        const now = Date.now();
+        const elapsedMs = Math.max(0, now - ORIGIN_TIMESTAMP_MS);
+        const totalSec = Math.floor(elapsedMs / 1000);
+
+        const days = Math.floor(totalSec / 86400);
+        const hours = Math.floor((totalSec % 86400) / 3600);
+        const minutes = Math.floor((totalSec % 3600) / 60);
+        const seconds = totalSec % 60;
+
+        document.getElementById('together-days').textContent = days;
+        document.getElementById('together-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('together-minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('together-seconds').textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateTogether();
+      togetherInterval = setInterval(updateTogether, 1000);
+    }
+
+    function openLoveLetter() {
+      playMagicalChime();
+      document.getElementById('letter-sealed-view').classList.add('hidden');
+      document.getElementById('letter-open-view').classList.remove('hidden');
+    }
+
+    function nextStarlightReason() {
+      const el = document.getElementById('starlight-reason-text');
+      el.classList.add('opacity-0');
+      setTimeout(() => {
+        currentReasonIndex = (currentReasonIndex + 1) % STARLIGHT_REASONS.length;
+        el.textContent = `"${STARLIGHT_REASONS[currentReasonIndex]}"`;
+        el.classList.remove('opacity-0');
+      }, 220);
+    }
+
+    /*************************************************************
+     * 8B. CURATED PHOTOS & MERGED VIDEO ARCHIVE
+     *************************************************************/
+    const VIDEO_ARCHIVE_CLIPS = [
+      {
+        file: "WhatsApp Video 2026-10-28 at 10.06.26 PM.mp4",
+        title: "Scene I • The Way You Move My World",
+        caption: "Seeing you in motion is realizing that happiness isn't a place—it's the way my heart beats whenever you're near."
+      },
+      {
+        file: "WhatsApp Video 2026-10-28 at 10.06.26 PM (1).mp4",
+        title: "Scene II • Every Second With You Is Magic",
+        caption: "If I could pause time and live inside one memory forever, it would be right here, watching you smile."
+      }
+    ];
+
+    const CURATED_PHOTOS = [
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.25 PM.jpeg",
+        tag: "Chapter I • First Glance",
+        emoji: "🌙",
+        title: "Where My Heart Found Home",
+        caption: "The moment I looked at you and quietly knew my heart would never belong to anyone else.",
+        secret: "At 2:28 AM on June 29, 2026, my whole definition of happiness began having your name written all over it.",
+        fallbackHue: "from-rose-950 via-purple-900 to-indigo-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.25 PM (2).jpeg",
+        tag: "Purest Radiance",
+        emoji: "✨",
+        title: "The Smile That Stops Time",
+        caption: "One look at your smile and suddenly the loudest world goes quiet and peaceful.",
+        secret: "হাসবা না প্লিজ, তুমি হাসতেছো লিটারেলি এখন আমি জানি ❤️",
+        fallbackHue: "from-pink-950 via-rose-900 to-amber-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.27 PM (1).jpeg",
+        tag: "Shining Grace",
+        emoji: "🌅",
+        title: "Your Hair Still Shines",
+        caption: "People travel the world searching for beauty, and I found all of it right here in you.",
+        secret: "ভাই তোমার চুল এখনো শাইন করে... আর তোমার মেন্টালিটিও এত ভালো ✨",
+        fallbackHue: "from-amber-950 via-rose-900 to-purple-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.28 PM (2).jpeg",
+        tag: "Unforgettable",
+        emoji: "💖",
+        title: "Soft Eyes, Forever Soul",
+        caption: "In your eyes, I found the gentlest sanctuary I have ever known.",
+        secret: "Every time you look at me like this, I fall in love with you all over again from the very beginning.",
+        fallbackHue: "from-purple-950 via-rose-900 to-pink-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.29 PM (2).jpeg",
+        tag: "Sweetest Grace",
+        emoji: "🌸",
+        title: "Effortlessly Breathtaking",
+        caption: "You don't even try, yet you turn an ordinary second into a memory I want to keep forever.",
+        secret: "If I had a flower for every time this photo made me smile, I would walk through an endless garden.",
+        fallbackHue: "from-rose-900 via-pink-950 to-indigo-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.30 PM (2).jpeg",
+        tag: "Heartbeats",
+        emoji: "💫",
+        title: "My Safe Harbor",
+        caption: "Being loved by you feels like coming home after a long journey through the dark.",
+        secret: "Four months with you has given me more warmth than a lifetime without you ever could.",
+        fallbackHue: "from-indigo-950 via-rose-900 to-amber-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.31 PM (2).jpeg",
+        tag: "Little Details",
+        emoji: "🦋",
+        title: "Every Little Detail of You",
+        caption: "I love the way you exist—the tilt of your head, the warmth in your eyes, the peace in your presence.",
+        secret: "You are the poem I always wished I knew how to write.",
+        fallbackHue: "from-rose-950 via-amber-900 to-pink-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.32 PM (3).jpeg",
+        tag: "Sunlit Soul",
+        emoji: "☀️",
+        title: "Sunlight in Human Form",
+        caption: "Even on the cloudiest days, just thinking of you brings warmth back into my chest.",
+        secret: "You didn't just enter my life—you lit up every corner of it.",
+        fallbackHue: "from-amber-900 via-rose-950 to-purple-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.33 PM (2).jpeg",
+        tag: "Cherished",
+        emoji: "🌹",
+        title: "The Girl Who Changed Everything",
+        caption: "Before June 29, I didn't know a single person could become my entire universe.",
+        secret: "Thank you for choosing me, loving me, and making these 4 months so magical.",
+        fallbackHue: "from-rose-950 via-pink-900 to-slate-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.34 PM (1).jpeg",
+        tag: "Timeless",
+        emoji: "🕰️",
+        title: "A Moment Frozen in Gold",
+        caption: "Some photographs hold more than light—they hold the exact feeling of being head-over-heels in love.",
+        secret: "I still catch myself staring at this picture with the biggest, luckiest smile on my face.",
+        fallbackHue: "from-purple-950 via-indigo-900 to-rose-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.35 PM (2).jpeg",
+        tag: "My Peace",
+        emoji: "🕊️",
+        title: "Quiet Magic",
+        caption: "With you, even silence feels like the sweetest conversation in the world.",
+        secret: "My favorite place will always be right beside you, no matter where we are.",
+        fallbackHue: "from-pink-950 via-rose-900 to-purple-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.36 PM (2).jpeg",
+        tag: "Adored",
+        emoji: "👑",
+        title: "Queen of My Heart",
+        caption: "Grace in your eyes, kindness in your heart, and a beauty that leaves me speechless every time.",
+        secret: "Out of billions of souls in this universe, how did I get so blessed to call you mine?",
+        fallbackHue: "from-amber-950 via-pink-900 to-rose-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.38 PM (1).jpeg",
+        tag: "Butterflies",
+        emoji: "💞",
+        title: "Still Getting Butterflies",
+        caption: "122 days later, and my heart still skips a beat the exact same way it did on night one.",
+        secret: "আমার হার্টবিট অনেক এখন... আসলেই অ্যাফেকশন একটা ক্রিয়েট হইছে ❤️",
+        fallbackHue: "from-rose-900 via-purple-950 to-indigo-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.39 PM (1).jpeg",
+        tag: "Pure Joy",
+        emoji: "🎶",
+        title: "My Favorite Melody",
+        caption: "If this photo had a sound, it would be the laugh that makes my whole world brighter.",
+        secret: "Making you smile will always be my favorite mission in life.",
+        fallbackHue: "from-indigo-950 via-pink-900 to-rose-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.40 PM (2).jpeg",
+        tag: "Dreamlike",
+        emoji: "🌠",
+        title: "Wished Upon a Star",
+        caption: "You are the answered prayer I didn't even know my heart was whispering.",
+        secret: "Every late night since 2:28 AM has been sweeter because you're in my life.",
+        fallbackHue: "from-purple-900 via-rose-950 to-amber-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.42 PM (2).jpeg",
+        tag: "Devotion",
+        emoji: "🕯️",
+        title: "Warmth That Never Fades",
+        caption: "There is a gentleness in you that makes me want to protect and cherish your heart forever.",
+        secret: "I promise to always be your biggest supporter, your safe space, and your truest love.",
+        fallbackHue: "from-rose-950 via-amber-950 to-purple-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.44 PM (2).jpeg",
+        tag: "Our Story",
+        emoji: "📖",
+        title: "My Favorite Chapter",
+        caption: "Of all the chapters in my life, the one that started on June 29 with you is the only one that matters.",
+        secret: "And the best part? Our story is only just beginning.",
+        fallbackHue: "from-pink-950 via-purple-900 to-indigo-950"
+      },
+      {
+        file: "WhatsApp Image 2026-10-28 at 10.06.45 PM (3).jpeg",
+        tag: "Forever & Always",
+        emoji: "♾️",
+        title: "Into Eternity With You",
+        caption: "Four months down, and a whole lifetime of loving you still ahead of us.",
+        secret: "Happy 4 Months Anniversary, my love. This entire universe was made for you ❤️",
+        fallbackHue: "from-amber-950 via-rose-900 to-pink-950"
+      }
+    ];
+
+    const ALL_ARCHIVE_FILENAMES = [
+      "WhatsApp Image 2026-10-28 at 10.06.25 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.25 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.25 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.25 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.26 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.27 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.27 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.27 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.27 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.28 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.28 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.28 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.29 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.29 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.29 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.30 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.30 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.30 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.30 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.31 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.31 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.31 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.32 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.32 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.32 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.32 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.33 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.33 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.33 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.34 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.34 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.34 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.35 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.35 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.35 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.35 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.36 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.36 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.36 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.37 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.37 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.37 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.38 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.38 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.38 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.38 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.39 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.39 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.39 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.40 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.40 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.40 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.40 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.41 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.41 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.41 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.42 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.42 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.42 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.42 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.43 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.43 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.43 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.43 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.44 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.44 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.44 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.45 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.45 PM (1).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.45 PM (2).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.45 PM (3).jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.46 PM.jpeg",
+      "WhatsApp Image 2026-10-28 at 10.06.46 PM (1).jpeg"
+    ];
+
+    const EXTRA_POETIC_NOTES = [
+      "Every time I look at this, my heart whispers: 'That's her. That's my whole world.'",
+      "You make loving you the easiest, most natural thing I have ever done.",
+      "Another little second with you that turned into an unforgettable memory.",
+      "No camera could ever fully capture the warmth I feel when I'm with you.",
+      "Four months of collecting moments like this, and I treasure every single one.",
+      "You are the softest, sweetest part of every single day.",
+      "If my heart had a photo album, every page would look just like this."
+    ];
+
+    const mediaBlobUrlMap = {};
+    let galleryViewMode = 'curated';
+    let activeGalleryItems = [...CURATED_PHOTOS];
+
+    let videoReelMode = 'montage';
+    let currentVideoClipIndex = 0;
+    let montageIntervalId = null;
+    let currentMontageSlideIndex = 0;
+
+    let currentLightboxIndex = 0;
+    let lightboxTimerId = null;
+
+    // Single lightweight probe to detect if the site is running alongside the extracted WhatsApp files (e.g. GitHub Pages)
+    function probeLocalRepositoryMedia() {
+      const testImg = new Image();
+      testImg.onload = () => {
+        if (testImg.naturalWidth > 0) {
+          localRepoMediaAvailable = true;
+          // Activate real confession voice note (.ogg) separately from background music
+          const confAudioEl = document.getElementById('confession-voice-audio');
+          if (confAudioEl && !hasConfessionVoiceFileLoaded) {
+            confAudioEl.src = encodeURI("WhatsApp Audio 2026-10-28 at 11.14.27 PM.ogg");
+            hasConfessionVoiceFileLoaded = true;
+            const statusEl = document.getElementById('voice-file-status');
+            if (statusEl) statusEl.textContent = "Confession Voice Ready ❤️";
+          }
+          renderCuratedGallery();
+          selectVideoReelMode('merged');
+          if (currentStage === 1.5) resolvePuzzleImageSource();
+        }
+      };
+      testImg.src = encodeURI("WhatsApp Image 2026-10-28 at 10.06.25 PM.jpeg");
+    }
+
+    function buildFullArchiveList() {
+      const curatedByFile = {};
+      CURATED_PHOTOS.forEach(item => { curatedByFile[item.file] = item; });
+
+      return ALL_ARCHIVE_FILENAMES.map((filename, idx) => {
+        if (curatedByFile[filename]) return curatedByFile[filename];
+        const extraNote = EXTRA_POETIC_NOTES[idx % EXTRA_POETIC_NOTES.length];
+        return {
+          file: filename,
+          tag: `Memory #${idx + 1} • Our Archive`,
+          emoji: idx % 2 === 0 ? "💖" : "✨",
+          title: `Precious Moment #${idx + 1}`,
+          caption: extraNote,
+          secret: `"Every single photo of you is a piece of our 4-month story that I hold closest to my heart."`,
+          fallbackHue: "from-rose-950 via-purple-900 to-indigo-950"
+        };
+      });
+    }
+
+    function createRomanticSvgFallback(title, tag, emoji) {
+      const safeTitle = (title || 'Our Memory').replace(/["'<>]/g, '');
+      const safeTag = (tag || 'June 29, 2026').replace(/["'<>]/g, '');
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+        <defs>
+          <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1e0619"/>
+            <stop offset="50%" stop-color="#3b0926"/>
+            <stop offset="100%" stop-color="#12041c"/>
+          </linearGradient>
+          <radialGradient id="r" cx="50%" cy="42%" r="50%">
+            <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="800" height="600" fill="url(#g)"/>
+        <rect width="800" height="600" fill="url(#r)"/>
+        <circle cx="400" cy="220" r="68" fill="none" stroke="#fda4af" stroke-opacity="0.3" stroke-width="1.5"/>
+        <circle cx="400" cy="220" r="95" fill="none" stroke="#fde68a" stroke-opacity="0.15" stroke-width="1"/>
+        <text x="400" y="238" text-anchor="middle" font-size="54">${emoji || '❤️'}</text>
+        <text x="400" y="340" text-anchor="middle" fill="#fde68a" font-family="Georgia, serif" font-size="16" letter-spacing="4">${safeTag.toUpperCase()}</text>
+        <text x="400" y="388" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-style="italic" font-size="31">${safeTitle}</text>
+        <text x="400" y="440" text-anchor="middle" fill="#fecdd3" fill-opacity="0.7" font-family="sans-serif" font-size="13">Our Story • June 29, 2026 ❤️</text>
+      </svg>`;
+      return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+    }
+
+    function resolvePhotoPrimaryUrl(item) {
+      if (mediaBlobUrlMap[item.file]) return mediaBlobUrlMap[item.file];
+      const base = item.file.split('/').pop();
+      if (mediaBlobUrlMap[base]) return mediaBlobUrlMap[base];
+      if (localRepoMediaAvailable) return encodeURI(item.file);
+      return createRomanticSvgFallback(item.title, item.tag, item.emoji);
+    }
+
+    function setGalleryViewMode(mode) {
+      galleryViewMode = mode;
+      const btnCurated = document.getElementById('filter-btn-curated');
+      const btnAll = document.getElementById('filter-btn-all');
+
+      if (mode === 'curated') {
+        activeGalleryItems = [...CURATED_PHOTOS];
+        btnCurated.className = "px-5 py-2 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-rose-600 to-amber-500 text-white shadow-lg transition-all cursor-pointer";
+        btnAll.className = "px-5 py-2 rounded-full text-xs sm:text-sm font-medium bg-white/10 hover:bg-white/20 text-rose-100 border border-white/15 transition-all cursor-pointer";
+      } else {
+        activeGalleryItems = buildFullArchiveList();
+        btnAll.className = "px-5 py-2 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-rose-600 to-amber-500 text-white shadow-lg transition-all cursor-pointer";
+        btnCurated.className = "px-5 py-2 rounded-full text-xs sm:text-sm font-medium bg-white/10 hover:bg-white/20 text-rose-100 border border-white/15 transition-all cursor-pointer";
+      }
+
+      renderCuratedGallery();
+    }
+
+    function renderCuratedGallery() {
+      const grid = document.getElementById('gallery-grid');
+      if (!grid) return;
+
+      grid.innerHTML = activeGalleryItems.map((item, idx) => {
+        const primaryUrl = resolvePhotoPrimaryUrl(item);
+
+        return `
+          <div class="flip-card h-[25rem] cursor-pointer group" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+              <div class="flip-card-front glass-card p-4 sm:p-5 flex flex-col justify-between overflow-hidden">
+                <div class="relative h-60 rounded-xl overflow-hidden bg-gradient-to-br ${item.fallbackHue} flex items-center justify-center">
+                  <img src="${primaryUrl}"
+                       alt="${item.title}"
+                       loading="lazy"
+                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent"></div>
+                  
+                  <button type="button"
+                    onclick="event.stopPropagation(); openPhotoLightbox(${idx});"
+                    class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 hover:bg-rose-600 text-white/90 flex items-center justify-center text-xs border border-white/20 transition-all cursor-pointer"
+                    title="Open Fullscreen">
+                    <i class="fa-solid fa-expand"></i>
+                  </button>
+
+                  <span class="absolute bottom-3 left-3 text-[11px] px-3 py-1 rounded-full bg-black/65 text-amber-200 border border-amber-300/30 tracking-wide">
+                    ${item.tag}
+                  </span>
+                </div>
+
+                <div class="pt-3 flex flex-col justify-between flex-1">
+                  <div class="flex items-start justify-between gap-2">
+                    <h3 class="font-serif text-2xl font-semibold text-white leading-snug">${item.title}</h3>
+                    <span class="text-xl shrink-0">${item.emoji}</span>
+                  </div>
+                  <p class="font-serif italic text-base sm:text-lg text-rose-100/90 line-clamp-2 mt-1">
+                    "${item.caption}"
+                  </p>
+                  <div class="flex items-center justify-between text-[11px] text-amber-200/75 pt-2 border-t border-white/10 mt-2">
+                    <span>Tap card for secret note ↻</span>
+                    <span class="truncate max-w-[160px] opacity-60">${item.file.replace('WhatsApp Image 2026-10-28 at ', '')}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flip-card-back glass-card p-7 flex flex-col items-center justify-between text-center border-amber-300/40 bg-gradient-to-br from-rose-950/95 via-[#180624]/95 to-purple-950/95">
+                <div class="text-xs uppercase tracking-[0.25em] text-amber-200/80 pt-1">
+                  ${item.tag}
+                </div>
+                <div class="my-auto px-2">
+                  <span class="text-3xl block mb-3">${item.emoji}</span>
+                  <h4 class="font-serif text-2xl font-semibold text-white text-glow-rose mb-3">${item.title}</h4>
+                  <p class="font-serif italic text-xl text-amber-100 leading-relaxed">
+                    "${item.secret}"
+                  </p>
+                </div>
+                <div class="w-full flex items-center justify-between text-xs text-rose-300 pt-3 border-t border-white/10">
+                  <span>Tap to flip back</span>
+                  <button type="button"
+                    onclick="event.stopPropagation(); openPhotoLightbox(${idx});"
+                    class="px-3 py-1 rounded-full bg-white/10 hover:bg-rose-500/30 text-amber-200 transition-all cursor-pointer">
+                    View Full Photo ↗
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function initMergedVideoPlayer() {
+      const videoEl = document.getElementById('merged-video-player');
+      if (!videoEl) return;
+
+      videoEl.onended = () => {
+        if (videoReelMode === 'merged') {
+          currentVideoClipIndex = (currentVideoClipIndex + 1) % VIDEO_ARCHIVE_CLIPS.length;
+          loadAndPlayVideoClip(currentVideoClipIndex, true);
+        }
+      };
+
+      selectVideoReelMode('montage');
+    }
+
+    function loadAndPlayVideoClip(index, autoPlay = false) {
+      const videoEl = document.getElementById('merged-video-player');
+      const badgeEl = document.getElementById('video-scene-badge');
+      const captionEl = document.getElementById('video-scene-caption');
+      if (!videoEl) return;
+
+      currentVideoClipIndex = index % VIDEO_ARCHIVE_CLIPS.length;
+      const clip = VIDEO_ARCHIVE_CLIPS[currentVideoClipIndex];
+      const base = clip.file.split('/').pop();
+      const hasBlob = mediaBlobUrlMap[clip.file] || mediaBlobUrlMap[base];
+
+      if (!hasBlob && !localRepoMediaAvailable) {
+        selectVideoReelMode('montage');
+        return;
+      }
+
+      const videoSrc = hasBlob || encodeURI(clip.file);
+      videoEl.src = videoSrc;
+      badgeEl.textContent = videoReelMode === 'merged'
+        ? `Merged Reel • Scene ${currentVideoClipIndex + 1} of ${VIDEO_ARCHIVE_CLIPS.length}`
+        : clip.title;
+      captionEl.textContent = `"${clip.caption}"`;
+      videoEl.load();
+      if (autoPlay) {
+        videoEl.play().catch(() => {});
+      }
+    }
+
+    function selectVideoReelMode(mode) {
+      videoReelMode = mode;
+      if (montageIntervalId) {
+        clearInterval(montageIntervalId);
+        montageIntervalId = null;
+      }
+
+      const tabMerged = document.getElementById('reel-tab-merged');
+      const tabV1 = document.getElementById('reel-tab-v1');
+      const tabV2 = document.getElementById('reel-tab-v2');
+      const tabMontage = document.getElementById('reel-tab-montage');
+      const videoEl = document.getElementById('merged-video-player');
+      const montageLayer = document.getElementById('montage-slide-layer');
+
+      const inactiveClass = "px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-white/10 hover:bg-white/20 text-rose-100 border border-white/15 transition-all cursor-pointer";
+      const activeClass = "px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-gradient-to-r from-rose-600 to-amber-500 text-white shadow-md transition-all cursor-pointer";
+
+      tabMontage.className = mode === 'montage' ? activeClass : inactiveClass;
+      tabMerged.className = mode === 'merged' ? activeClass : inactiveClass;
+      tabV1.className = mode === 0 ? activeClass : inactiveClass;
+      tabV2.className = mode === 1 ? activeClass : inactiveClass;
+
+      if (mode === 'montage') {
+        videoEl.pause();
+        videoEl.classList.add('hidden');
+        montageLayer.classList.remove('hidden');
+        montageLayer.classList.add('flex');
+        startCinemaMontageShow();
+      } else {
+        const clip0 = VIDEO_ARCHIVE_CLIPS[0].file;
+        const hasVideoReady = mediaBlobUrlMap[clip0] || localRepoMediaAvailable;
+        if (!hasVideoReady) {
+          videoReelMode = 'montage';
+          tabMontage.className = activeClass;
+          tabMerged.className = inactiveClass;
+          videoEl.classList.add('hidden');
+          montageLayer.classList.remove('hidden');
+          montageLayer.classList.add('flex');
+          startCinemaMontageShow();
+          return;
+        }
+
+        montageLayer.classList.add('hidden');
+        montageLayer.classList.remove('flex');
+        videoEl.classList.remove('hidden');
+        const targetIndex = typeof mode === 'number' ? mode : 0;
+        loadAndPlayVideoClip(targetIndex, false);
+      }
+    }
+
+    function playNextReelPart() {
+      if (videoReelMode === 'montage') {
+        currentMontageSlideIndex = (currentMontageSlideIndex + 1) % CURATED_PHOTOS.length;
+        updateMontageSlide();
+      } else {
+        currentVideoClipIndex = (currentVideoClipIndex + 1) % VIDEO_ARCHIVE_CLIPS.length;
+        loadAndPlayVideoClip(currentVideoClipIndex, true);
+      }
+    }
+
+    function playPreviousReelPart() {
+      if (videoReelMode === 'montage') {
+        currentMontageSlideIndex = (currentMontageSlideIndex - 1 + CURATED_PHOTOS.length) % CURATED_PHOTOS.length;
+        updateMontageSlide();
+      } else {
+        currentVideoClipIndex = (currentVideoClipIndex - 1 + VIDEO_ARCHIVE_CLIPS.length) % VIDEO_ARCHIVE_CLIPS.length;
+        loadAndPlayVideoClip(currentVideoClipIndex, true);
+      }
+    }
+
+    function startCinemaMontageShow() {
+      currentMontageSlideIndex = 0;
+      updateMontageSlide();
+      montageIntervalId = setInterval(() => {
+        currentMontageSlideIndex = (currentMontageSlideIndex + 1) % CURATED_PHOTOS.length;
+        updateMontageSlide();
+      }, 4200);
+    }
+
+    function updateMontageSlide() {
+      const item = CURATED_PHOTOS[currentMontageSlideIndex];
+      const imgEl = document.getElementById('montage-slide-img');
+      const tagEl = document.getElementById('montage-slide-tag');
+      const capEl = document.getElementById('montage-slide-caption');
+      const badgeEl = document.getElementById('video-scene-badge');
+      const sceneCapEl = document.getElementById('video-scene-caption');
+
+      if (!imgEl || !item) return;
+      imgEl.src = resolvePhotoPrimaryUrl(item);
+      tagEl.textContent = `${item.tag} • ${item.title}`;
+      capEl.textContent = `"${item.caption}"`;
+      badgeEl.textContent = `Cinema Montage • Frame ${currentMontageSlideIndex + 1} of ${CURATED_PHOTOS.length}`;
+      sceneCapEl.textContent = `"${item.secret}"`;
+    }
+
+    function openPhotoLightbox(index) {
+      currentLightboxIndex = index;
+      const modal = document.getElementById('photo-lightbox-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      updateLightboxView();
+    }
+
+    function closePhotoLightbox() {
+      if (lightboxTimerId) {
+        clearInterval(lightboxTimerId);
+        lightboxTimerId = null;
+      }
+      const modal = document.getElementById('photo-lightbox-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function stepLightbox(delta) {
+      currentLightboxIndex = (currentLightboxIndex + delta + activeGalleryItems.length) % activeGalleryItems.length;
+      updateLightboxView();
+    }
+
+    function toggleLightboxSlideshow() {
+      const btn = document.getElementById('lightbox-autoplay-btn');
+      if (lightboxTimerId) {
+        clearInterval(lightboxTimerId);
+        lightboxTimerId = null;
+        btn.innerHTML = '<i class="fa-solid fa-play mr-1"></i> Auto-Play';
+      } else {
+        btn.innerHTML = '<i class="fa-solid fa-pause mr-1"></i> Pause';
+        lightboxTimerId = setInterval(() => {
+          stepLightbox(1);
+        }, 3800);
+      }
+    }
+
+    function updateLightboxView() {
+      const item = activeGalleryItems[currentLightboxIndex];
+      if (!item) return;
+
+      const imgEl = document.getElementById('lightbox-img');
+      imgEl.src = resolvePhotoPrimaryUrl(item);
+
+      document.getElementById('lightbox-counter').textContent = `Memory ${currentLightboxIndex + 1} of ${activeGalleryItems.length}`;
+      document.getElementById('lightbox-tag').textContent = `${item.emoji} ${item.tag}`;
+      document.getElementById('lightbox-title').textContent = item.title;
+      document.getElementById('lightbox-caption').textContent = `"${item.caption}"`;
+      document.getElementById('lightbox-secret').textContent = `Secret Note: "${item.secret}"`;
+    }
+
+    /*************************************************************
+     * 8C. IN-BROWSER ZIP & MEDIA ARCHIVE EXTRACTOR + INDEXEDDB
+     *************************************************************/
+    const IDB_NAME = 'our_story_media_archive_v3';
+    const IDB_STORE = 'files';
+
+    function openMediaIDB() {
+      return new Promise((resolve, reject) => {
+        try {
+          if (!window.indexedDB) return reject(new Error('IndexedDB unavailable'));
+          const req = indexedDB.open(IDB_NAME, 1);
+          req.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(IDB_STORE)) {
+              db.createObjectStore(IDB_STORE);
+            }
+          };
+          req.onsuccess = () => resolve(req.result);
+          req.onerror = () => reject(req.error);
+        } catch (err) {
+          reject(err);
+        }
+      });
+    }
+
+    async function saveBlobToIDB(filename, blob) {
+      try {
+        const db = await openMediaIDB();
+        const tx = db.transaction(IDB_STORE, 'readwrite');
+        tx.objectStore(IDB_STORE).put(blob, filename);
+      } catch (e) {}
+    }
+
+    async function restoreMediaFromIDB() {
+      try {
+        const db = await openMediaIDB();
+        const tx = db.transaction(IDB_STORE, 'readonly');
+        const store = tx.objectStore(IDB_STORE);
+        const keysReq = store.getAllKeys();
+
+        keysReq.onsuccess = () => {
+          const keys = keysReq.result || [];
+          if (keys.length === 0) return;
+          keys.forEach(key => {
+            const getReq = store.get(key);
+            getReq.onsuccess = () => {
+              if (getReq.result) {
+                if (key === '__custom_confession_audio__') {
+                  loadConfessionVoiceBlob(getReq.result, 'Saved Confession Audio');
+                } else if (key === '__custom_bg_music__') {
+                  loadCustomBgMusicBlob(getReq.result, 'Saved Background Music');
+                } else {
+                  mediaBlobUrlMap[key] = URL.createObjectURL(getReq.result);
+                }
+                renderCuratedGallery();
+                updateMontageSlide();
+                if (currentStage === 1.5) resolvePuzzleImageSource();
+              }
+            };
+          });
+        };
+      } catch (e) {}
+    }
+
+    async function handleUserMediaUpload(event) {
+      const files = Array.from(event.target.files || []);
+      if (files.length === 0) return;
+
+      for (const file of files) {
+        const lowerName = file.name.toLowerCase();
+        if (lowerName.endsWith('.zip') && window.JSZip) {
+          try {
+            const zip = await JSZip.loadAsync(file);
+            const entries = Object.keys(zip.files);
+            for (const entryName of entries) {
+              const zipEntry = zip.files[entryName];
+              if (zipEntry.dir) continue;
+              const baseName = entryName.split('/').pop();
+              if (!baseName || baseName.startsWith('.')) continue;
+
+              const lower = baseName.toLowerCase();
+              let mime = 'application/octet-stream';
+              if (lower.endsWith('.jpg') || lower.endsWith('.jpeg')) mime = 'image/jpeg';
+              else if (lower.endsWith('.png')) mime = 'image/png';
+              else if (lower.endsWith('.mp4')) mime = 'video/mp4';
+              else if (lower.endsWith('.ogg')) mime = 'audio/ogg';
+              else if (lower.endsWith('.mp3') || lower.endsWith('.wav') || lower.endsWith('.m4a')) mime = 'audio/mpeg';
+              else continue;
+
+              const arrayBuf = await zipEntry.async('arraybuffer');
+              const blob = new Blob([arrayBuf], { type: mime });
+              if (lower.endsWith('.ogg')) {
+                loadConfessionVoiceBlob(blob, baseName);
+              } else if (mime.startsWith('audio/')) {
+                loadCustomBgMusicBlob(blob, baseName);
+              } else {
+                mediaBlobUrlMap[baseName] = URL.createObjectURL(blob);
+                await saveBlobToIDB(baseName, blob);
+              }
+            }
+          } catch (err) {
+            console.warn('Error reading ZIP:', err);
+          }
+        } else if (lowerName.endsWith('.ogg')) {
+          loadConfessionVoiceBlob(file, file.name);
+        } else if (file.type.startsWith('audio/') || lowerName.endsWith('.mp3') || lowerName.endsWith('.wav') || lowerName.endsWith('.m4a')) {
+          loadCustomBgMusicBlob(file, file.name);
+        } else {
+          const baseName = file.name.split('/').pop();
+          mediaBlobUrlMap[baseName] = URL.createObjectURL(file);
+          await saveBlobToIDB(baseName, file);
+        }
+      }
+
+      renderCuratedGallery();
+      updateMontageSlide();
+      if (mediaBlobUrlMap[VIDEO_ARCHIVE_CLIPS[0].file]) {
+        selectVideoReelMode('merged');
+      }
+      if (currentStage === 1.5) resolvePuzzleImageSource();
+    }
+
+    /*************************************************************
+     * 9. CREATOR SETTINGS MODAL
+     *************************************************************/
+    function toggleCreatorModal() {
+      const modal = document.getElementById('creator-modal');
+      const isHidden = modal.classList.contains('hidden');
+      if (isHidden) {
+        document.getElementById('cfg-nicknames-input').value = appConfig.nicknames.join(', ');
+        document.getElementById('cfg-display-name').value = appConfig.displayName || 'My Love';
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function saveCreatorSettings() {
+      const rawNicks = document.getElementById('cfg-nicknames-input').value;
+      const parsedNicks = rawNicks
+        .split(',')
+        .map(s => s.trim())
+        .filter(Boolean);
+
+      if (parsedNicks.length > 0) {
+        appConfig.nicknames = parsedNicks;
+      }
+      const disp = document.getElementById('cfg-display-name').value.trim();
+      if (disp) {
+        appConfig.displayName = disp;
+      }
+
+      safeSetStorage(STORAGE_KEY_CONFIG, JSON.stringify(appConfig));
+      applyCustomConfigToDOM();
+      toggleCreatorModal();
+    }
+
+    function applyCustomConfigToDOM() {
+      const nameEl = document.getElementById('hero-partner-name');
+      if (nameEl && appConfig.displayName) {
+        nameEl.textContent = appConfig.displayName;
+      }
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    /*************************************************************
+     * 10. INITIALIZATION
+     *************************************************************/
+    window.addEventListener('resize', () => {
+      resizeCosmosCanvas();
+      if (cinematicCanvas) {
+        cinematicCanvas.width = window.innerWidth || 1024;
+        cinematicCanvas.height = window.innerHeight || 768;
+      }
+    });
+
+    let appInitialized = false;
+    function initializeAnniversaryUniverse() {
+      if (appInitialized) return;
+      appInitialized = true;
+
+      applyCustomConfigToDOM();
+      initCosmosEntities();
+      animateCosmos();
+      setupConfessionAudioListeners();
+      renderConfessionLines();
+      renderCuratedGallery();
+      initMergedVideoPlayer();
+      restoreMediaFromIDB();
+      probeLocalRepositoryMedia();
+      goToStage(1);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeAnniversaryUniverse);
+    } else {
+      initializeAnniversaryUniverse();
+    }
+  </script>
+</body>
+</html>
